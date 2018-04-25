@@ -205,6 +205,87 @@ pie_function(five_df_2, order_5, color_baseline, flavor)
 
 ![](Five_Six_files/figure-markdown_github/unnamed-chunk-5-5.png)
 
+``` r
+five1_waffle1 <- c(`Vanilla` =6,
+                 `Chocolate` =13,
+                 `Strawberry` = 24,
+                 `Lemon` =8,
+                 `Peach` =31,
+                 `Blueberry` =18)
+
+five2_waffle2 <- c(`Vanilla` =6,
+                 `Strawberry` =24,
+                 `Chocolate` =13,
+                 `Lemon` =8,
+                 `Peach` =31,
+                 `Blueberry` =18)
+
+five3_waffle3 <- c(`Vanilla` =6,
+                  `Strawberry` =24,
+                  `Lemon` =8,
+                 `Chocolate` =13,
+                 `Peach` =31,
+                 `Blueberry` =18)
+
+five4_waffle4 <- c(`Vanilla` =6,
+                  `Strawberry` = 24,
+                  `Lemon` =8,
+                 `Peach` =31,
+                 `Chocolate` =13,
+                 `Blueberry` =18)
+
+five5_waffle5 <- c(`Vanilla` =6,
+                 `Strawberry` = 24,
+                 `Lemon` =8,
+                 `Peach` =31,
+                 `Blueberry` =18,
+                 `Chocolate` =13)
+                 
+
+waffle(five1_waffle1,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2", "navy"))
+```
+
+![](Five_Six_files/figure-markdown_github/unnamed-chunk-5-6.png)
+
+``` r
+waffle(five2_waffle2,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "chocolate4", "yellow2", "darkorange2", "navy"))
+```
+
+![](Five_Six_files/figure-markdown_github/unnamed-chunk-5-7.png)
+
+``` r
+waffle(five3_waffle3,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "yellow2", "chocolate4", "darkorange2", "navy"))
+```
+
+![](Five_Six_files/figure-markdown_github/unnamed-chunk-5-8.png)
+
+``` r
+waffle(five4_waffle4,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "yellow2", "darkorange2", "chocolate4", "navy"))
+```
+
+![](Five_Six_files/figure-markdown_github/unnamed-chunk-5-9.png)
+
+``` r
+waffle(five5_waffle5,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "yellow2", "darkorange2", "navy", "chocolate4"))
+```
+
+![](Five_Six_files/figure-markdown_github/unnamed-chunk-5-10.png)
+
 6. Prior ideas about colors might change perception
 ===================================================
 
