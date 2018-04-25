@@ -8,6 +8,7 @@ output: github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
+library(waffle)
 ```
 
 ```{r}
@@ -69,6 +70,68 @@ pie_function(five_df, order_2, color_baseline, flavor)
 pie_function(five_df, order_3, color_baseline, flavor)
 pie_function(five_df, order_4, color_baseline, flavor)
 pie_function(five_df, order_5, color_baseline, flavor)
+
+five1_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` = 20,
+                 `Lemon` =24,
+                 `Peach` =18,
+                 `Blueberry` =13)
+
+five2_waffle <- c(`Vanilla` =9,
+                 `Strawberry` = 20,
+                 `Chocolate` =16,
+                 `Lemon` =24,
+                 `Peach` =18,
+                 `Blueberry` =13)
+
+five3_waffle <- c(`Vanilla` =9,
+                  `Strawberry` = 20,
+                  `Lemon` =24,
+                 `Chocolate` =16,
+                 `Peach` =18,
+                 `Blueberry` =13)
+
+five4_waffle <- c(`Vanilla` =9,
+                  `Strawberry` = 20,
+                  `Lemon` =24,
+                 `Peach` =18,
+                 `Chocolate` =16,
+                 `Blueberry` =13)
+
+five5_waffle <- c(`Vanilla` =9,
+                 `Strawberry` = 20,
+                 `Lemon` =24,
+                 `Peach` =18,
+                 `Blueberry` =13,
+                 `Chocolate` =16)
+                 
+
+waffle(five1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2", "navy"))
+
+waffle(five2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "chocolate4", "yellow2", "darkorange2", "navy"))
+
+waffle(five3_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "yellow2", "chocolate4", "darkorange2", "navy"))
+
+waffle(five4_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "yellow2", "darkorange2", "chocolate4", "navy"))
+
+waffle(five5_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "brown2", "yellow2", "darkorange2", "navy", "chocolate4"))
+
 ```
 ## 5.2 Sample 2: different slice sizes
 ```{r}
@@ -99,6 +162,19 @@ color_baseline_six = c("paleturquoise1", "chocolate4", "brown2", "yellow2", "dar
 
 pie_function(six_df, order_1, color_baseline_six, flavor)
 
+six1_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` =20,
+                 `Lemon` =24,
+                 `Peach` = 18,
+                 `Blueberry` =13)
+                 
+
+waffle(six1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("paleturquoise1", "chocolate4", "brown2", "yellow2", "darkorange2", "navy"))
+
 ```
 
 ## 6.2 Only the color of question is right
@@ -106,6 +182,18 @@ pie_function(six_df, order_1, color_baseline_six, flavor)
 color_baseline_six_3 = c("lightgoldenrodyellow", "navy", "chocolate4", "brown2", "yellow2", "darkorange2")
 
 pie_function(six_df, order_1, color_baseline_six_3, flavor)
+
+six2_waffle <- c(`Vanilla` =9,
+                 `Blueberry` =13,
+                 `Peach` = 18,
+                 `Lemon` =24,
+                 `Strawberry` =20,
+                 `Chocolate` =16)
+
+waffle(six2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "navy", "chocolate4", "brown2", "yellow2", "darkorange2"))
 ```
 
 ## 6.3 All colors are wrong
@@ -113,6 +201,18 @@ pie_function(six_df, order_1, color_baseline_six_3, flavor)
 color_baseline_six_2 = c("chocolate4", "lightgoldenrodyellow", "navy", "brown2", "yellow2", "darkorange2")
 
 pie_function(six_df, order_1, color_baseline_six_2, flavor)
+
+six3_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` =20,
+                 `Lemon` =24,
+                 `Peach` = 18,
+                 `Blueberry` =13)
+
+waffle(six3_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "navy", "chocolate4", "brown2", "yellow2", "darkorange2"))
 ```
 
 
