@@ -1,0 +1,132 @@
+Three\_Four
+================
+Beau Harrison
+April 25, 2018
+
+``` r
+# General issues
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+```
+
+``` r
+# Function to create  pie
+pie_function <- function(df, order, color_baseline, flavor) {
+  
+  df$flavor <- factor(df$flavor, flavor[order])
+  color_array <- color_baseline[order]
+  
+  bp <- ggplot(df, aes(x="", y=number, fill = flavor)) + 
+    geom_bar(width = 1, stat = "identity")
+
+  pie <- bp + coord_polar("y", start=0)
+
+  pie +  
+    blank_theme + theme(axis.text.x=element_blank()) + 
+    scale_fill_manual(values= color_array)
+}
+```
+
+``` r
+flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'orange')
+number <- c(10, 14, 20, 27, 29)
+order_1 = c(1,2,3,4,5)
+order_2 = c(4,1,2,3,5)
+order_3 = c(1,4,2,3,5)
+order_4 = c(1,2,4,3,5)
+order_5 = c(1,2,3,5,4)
+
+three_df <- data.frame(flavor, number)
+# Factor (the first thing is the input, the order is in the second)
+
+color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
+```
+
+``` r
+pie_function(three_df, order_1, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-1.png)
+
+``` r
+pie_function(three_df, order_2, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-2.png)
+
+``` r
+pie_function(three_df, order_3, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-3.png)
+
+``` r
+pie_function(three_df, order_4, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-4.png)
+
+``` r
+pie_function(three_df, order_5, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-5.png)
+
+``` r
+flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'orange')
+number <- c(10, 16, 18, 26, 30)
+order_1 = c(3,5,2,4,1)
+order_2 = c(5,1,2,4,3)
+order_3 = c(2,5,1,3,4)
+order_4 = c(4,1,5,3,2)
+order_5 = c(1,3,4,2,5)
+ordered = c(1,2,3,4,5)
+
+four_df <- data.frame(flavor, number)
+# Factor (the first thing is the input, the order is in the second)
+
+color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
+```
+
+``` r
+pie_function(four_df, order_1, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-1.png)
+
+``` r
+pie_function(four_df, order_2, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-2.png)
+
+``` r
+pie_function(four_df, order_3, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-3.png)
+
+``` r
+pie_function(four_df, order_4, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-4.png)
+
+``` r
+pie_function(four_df, order_5, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-5.png)
+
+``` r
+pie_function(four_df, ordered, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-6.png)
