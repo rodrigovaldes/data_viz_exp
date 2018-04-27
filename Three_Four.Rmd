@@ -41,7 +41,8 @@ pie_function <- function(df, order, color_baseline, flavor) {
 }
 ```
 
-# 3. One to one comparisons. 
+# 3. One to one comparisons.
+
 Question: Is the size of the orange slice bigger than the lemon slice?
 
 Intuition: Does the position matter?
@@ -71,6 +72,7 @@ pie_function(three_df, order_5, color_baseline, flavor)
 ```
 
 # 4. Believes about ordering of slices
+
 Question: Which proportion is bigger? Lemon or orange? Vanilla or chocolate?
 
 Intutition: Do people think that slices are ordered according to sizes?
