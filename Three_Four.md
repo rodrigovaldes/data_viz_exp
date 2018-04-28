@@ -1,6 +1,6 @@
 Three\_Four
 ================
-Beau Harrison. Edits: Rodrigo Valdes
+Beau Harrison. Edits: Rodrigo Valdes. Waffles: Rafael Cruz Gil
 April 25, 2018
 
 ``` r
@@ -43,7 +43,7 @@ Intuition: Does the position matter?
 
 ``` r
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'orange')
-number <- c(15, 18, 22, 24, 27)
+number <- c(14, 17, 21, 23, 25)
 order_1 = c(1,2,3,4,5)
 order_2 = c(1,2,3,5,4)
 order_3 = c(4,1,2,3,5)
@@ -55,6 +55,36 @@ three_df <- data.frame(flavor, number)
 # Factor (the first thing is the input, the order is in the second)
 
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
+
+three1_waffle <- c(`Vanilla` = 14,
+                 `Chocolate` = 17,
+                 `Strawberry` = 21,
+                 `Lemon` = 23,
+                 `Orange` = 25)
+
+three2_waffle <- c(`Vanilla` =14,
+                 `Chocolate` =17,
+                 `Strawberry` = 21,
+                 `Orange` = 25,
+                 `Lemon` = 23)
+
+three3_waffle <- c(`Lemon` =23,
+                 `Vanilla` =14,
+                 `Chocolate` =17,
+                 `Strawberry` = 21,
+                 `Orange` =25)
+
+three4_waffle <- c(`Vanilla` =14,
+                 `Lemon` =23,
+                 `Chocolate` =17,
+                 `Strawberry` = 21,
+                 `Orange` =25)
+
+three5_waffle <- c(`Vanilla` =14,
+                 `Chocolate` =17,
+                 `Lemon` =23,
+                 `Strawberry` = 21,
+                 `Orange` =25)
 ```
 
 ``` r
@@ -64,28 +94,73 @@ pie_function(three_df, order_1, color_baseline, flavor)
 ![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
 ``` r
-pie_function(three_df, order_2, color_baseline, flavor)
+waffle(three1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2"))
 ```
 
 ![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-2.png)
 
 ``` r
-pie_function(three_df, order_3, color_baseline, flavor)
+pie_function(three_df, order_2, color_baseline, flavor)
 ```
 
 ![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-3.png)
 
 ``` r
-pie_function(three_df, order_4, color_baseline, flavor)
+waffle(three2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "chocolate4", "brown2", "darkorange2", "yellow2"))
 ```
 
 ![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-4.png)
 
 ``` r
-pie_function(three_df, order_5, color_baseline, flavor)
+pie_function(three_df, order_3, color_baseline, flavor)
 ```
 
 ![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-5.png)
+
+``` r
+waffle(three3_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("yellow2", "lightgoldenrodyellow", "chocolate4", "brown2", "darkorange2"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-6.png)
+
+``` r
+pie_function(three_df, order_4, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-7.png)
+
+``` r
+waffle(three4_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "yellow2", "chocolate4", "brown2", "darkorange2"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-8.png)
+
+``` r
+pie_function(three_df, order_5, color_baseline, flavor)
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-9.png)
+
+``` r
+waffle(three5_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "chocolate4", "yellow2", "brown2", "darkorange2"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-4-10.png)
 
 4. Believes about ordering of slices
 ====================================
@@ -96,7 +171,7 @@ Intutition: Do people think that slices are ordered according to sizes?
 
 ``` r
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'orange')
-number <- c(14, 17, 18, 26, 30)
+number <- c(13, 16, 17, 25, 29)
 
 # General Ordering 1
 # Baseline
@@ -118,6 +193,42 @@ four_df <- data.frame(flavor, number)
 # Factor (the first thing is the input, the order is in the second)
 
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
+
+four1_waffle <- c(`Vanilla` = 13,
+                 `Chocolate` = 16,
+                 `Strawberry` = 17,
+                 `Lemon` = 25,
+                 `Orange` = 29)
+
+four2_waffle <- c(`Vanilla` = 13,
+                 `Chocolate` = 16,
+                 `Strawberry` = 17,
+                 `Orange` = 29,
+                 `Lemon` = 25)
+
+four3_waffle <- c(`Chocolate` = 16,
+                  `Vanilla` = 13,
+                 `Strawberry` = 17,
+                 `Lemon` = 25,
+                 `Orange` = 29)
+
+four4_waffle <- c(`Orange` = 29,
+                  `Lemon` = 25,
+                  `Strawberry` = 17,
+                  `Chocolate` = 16,
+                  `Vanilla` = 13)
+
+four5_waffle <- c(`Lemon` = 25,
+                  `Orange` = 29,
+                  `Strawberry` = 17,
+                  `Chocolate` = 16,
+                  `Vanilla` = 13)
+
+four6_waffle <- c(`Orange` = 29,
+                  `Lemon` = 25,
+                  `Strawberry` = 17,
+                  `Vanilla` = 13,
+                  `Chocolate` = 16)
 ```
 
 ``` r
@@ -128,36 +239,90 @@ pie_function(four_df, order_1, color_baseline, flavor)
 ![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 ``` r
+waffle(four1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-2.png)
+
+``` r
 # Which slice is bigger? Lemon or orange? 
 pie_function(four_df, order_2, color_baseline, flavor)
 ```
 
-![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-2.png)
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-3.png)
+
+``` r
+waffle(four2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("lightgoldenrodyellow", "chocolate4", "brown2", "darkorange2", "yellow2"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-4.png)
 
 ``` r
 # Which slice is bigger? Vanilla or chocolate?
 pie_function(four_df, order_3, color_baseline, flavor)
 ```
 
-![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-3.png)
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-5.png)
+
+``` r
+waffle(four3_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("chocolate4", "lightgoldenrodyellow", "brown2", "yellow2", "darkorange2"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-6.png)
 
 ``` r
 # Which slice is bigger? Lemon or orange? 
 pie_function(four_df, order_4, color_baseline, flavor)
 ```
 
-![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-4.png)
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-7.png)
+
+``` r
+waffle(four4_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("orange2", "yellow2", "brown2", "chocolate4", "lightgoldenrodyellow"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-8.png)
 
 ``` r
 # Which slice is bigger? Lemon or orange? 
 pie_function(four_df, order_5, color_baseline, flavor)
 ```
 
-![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-5.png)
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-9.png)
+
+``` r
+waffle(four5_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("yellow2", "orange2", "brown2", "chocolate4", "lightgoldenrodyellow"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-10.png)
 
 ``` r
 # Which slice is bigger? Vanilla or chocolate? 
 pie_function(four_df, order_6, color_baseline, flavor)
 ```
 
-![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-6.png)
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-11.png)
+
+``` r
+waffle(four6_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c("orange2", "yellow2", "brown2", "lightgoldenrodyellow", "chocolate4"))
+```
+
+![](Three_Four_files/figure-markdown_github/unnamed-chunk-6-12.png)

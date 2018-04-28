@@ -1,6 +1,6 @@
 Experiment
 ================
-Rodrigo Valdes Ortiz
+Rodrigo Valdes Ortiz. Waffles: Rafael Cruz Gil
 4/23/2018
 
 ``` r
@@ -338,11 +338,11 @@ pie_function(six_df, order_1, color_baseline_six_3, flavor)
 
 ``` r
 six2_waffle <- c(`Vanilla` =9,
-                 `Blueberry` =13,
-                 `Peach` = 18,
+                 `Chocolate` =13,
+                 `Strawberry` = 18,
                  `Lemon` =24,
-                 `Strawberry` =20,
-                 `Chocolate` =16)
+                 `Peach` =20,
+                 `Blueberry` =16)
 
 waffle(six2_waffle,
        rows = 10,

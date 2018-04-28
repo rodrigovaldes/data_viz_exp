@@ -1,6 +1,6 @@
 ---
 title: "Experiment"
-author: "Rodrigo Valdes Ortiz"
+author: "Rodrigo Valdes Ortiz. Waffles: Rafael Cruz Gil"
 date: "4/23/2018"
 output: github_document
 ---
@@ -245,11 +245,11 @@ color_baseline_six_3 = c("lightgoldenrodyellow", "navy", "chocolate4", "brown2",
 pie_function(six_df, order_1, color_baseline_six_3, flavor)
 
 six2_waffle <- c(`Vanilla` =9,
-                 `Blueberry` =13,
-                 `Peach` = 18,
+                 `Chocolate` =13,
+                 `Strawberry` = 18,
                  `Lemon` =24,
-                 `Strawberry` =20,
-                 `Chocolate` =16)
+                 `Peach` =20,
+                 `Blueberry` =16)
 
 waffle(six2_waffle,
        rows = 10,
