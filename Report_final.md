@@ -8,10 +8,7 @@ output:
      toc: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-```
+
 
 ### Introduction
 
