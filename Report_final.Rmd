@@ -43,20 +43,20 @@ Sample Size Pie: 40
 
 Sample Size Waffle: 45
 
-ttest_ind:            t = -0.364234  p = 0.71661
+ttest_ind:            t = -0.36  p = 0.72
 
-cohen's d:  -0.07880321382387548
+cohen's d:  -0.079
 
 Pie Exact Accuracy:  0.05
 
-Waffle Exact Accuracy:  0.4666666666666667
+Waffle Exact Accuracy:  0.47
 
 ![](images/two.png)
 
 
-Pie Accuracy within 2 units:  0.425
+Pie Accuracy within 2 units:  0.43
 
-Waffle Accuracy within 2 units:  0.6222222222222222
+Waffle Accuracy within 2 units:  0.62
 ******************************
 *Option  2*
 
@@ -64,18 +64,18 @@ Sample Size Pie: 48
 
 Sample Size Waffle: 36
 
-ttest_ind:            t = 1.26233  p = 0.210589
+ttest_ind:            t = 1.26  p = 0.21
 
-cohen's d:  0.2769648261581617
+cohen's d:  0.28
 
-Pie Exact Accuracy:  0.0625
+Pie Exact Accuracy:  0.06
 
-Waffle Exact Accuracy:  0.7222222222222222
+Waffle Exact Accuracy:  0.72
 
 
-Pie Accuracy within 2 units:  0.3333333333333333
+Pie Accuracy within 2 units:  0.33
 
-Waffle Accuracy within 2 units:  0.8055555555555556
+Waffle Accuracy within 2 units:  0.81
 
 ![](images/three.png)
 
@@ -86,17 +86,17 @@ Sample Size Pie: 32
 
 Sample Size Waffle: 40
 
-ttest_ind:            t = 0.758422  p = 0.451261
+ttest_ind:            t = 0.76  p = 0.45
 
-cohen's d:  0.18217193737817916
+cohen's d:  0.18
 
-Pie Exact Accuracy:  0.0625
+Pie Exact Accuracy:  0.06
 
 Waffle Exact Accuracy:  0.55
 
 
 
-Pie Accuracy within 2 units:  0.40625
+Pie Accuracy within 2 units:  0.41
 
 Waffle Accuracy within 2 units:  0.65
 
@@ -109,15 +109,15 @@ Sample Size Pie: 45
 
 Sample Size Waffle: 50
 
-ttest_ind:            t = 0.218429  p = 0.827576
+ttest_ind:            t = 0.22  p = 0.83
 
-cohen's d:  0.044834330848297604
+cohen's d:  0.045
 
-Pie Exact Accuracy:  0.06666666666666667
+Pie Exact Accuracy:  0.07
 
 Waffle Exact Accuracy:  0.62
 
-Pie Accuracy within 2 units:  0.4666666666666667
+Pie Accuracy within 2 units:  0.47
 
 Waffle Accuracy within 2 units:  0.72
 
@@ -148,22 +148,21 @@ Sample Size Waffle: 69
 
 N =  1000
 
-ttest_ind:            t = 1.61739  p = 0.108075
+ttest_ind:            t = 1.62  p = 0.11
 
 cohen's d:  0.2721334444241711
 
-Pie Exact Accuracy:  0.013888888888888888
-
+Pie Exact Accuracy:  0.014
 Waffle Exact Accuracy:  0.0
 
 
-Pie Accuracy within 2 units:  0.1111111111111111
+Pie Accuracy within 2 units:  0.11
 
-Waffle Accuracy within 2 units:  0.42028985507246375
+Waffle Accuracy within 2 units:  0.42
 
-Pie Accuracy within 5 units:  0.16666666666666666
+Pie Accuracy within 5 units:  0.17
 
-Waffle Accuracy within 5 units:  0.42028985507246375
+Waffle Accuracy within 5 units:  0.42
 
 ![](images/eight.png)
 
@@ -176,20 +175,20 @@ Sample Size Waffle: 60
 
 N =  874
 
-ttest_ind:            t = -0.0784656  p = 0.937585
+ttest_ind:            t = -0.08  p = 0.945
 
-cohen's d:  -0.013906615254077681
+cohen's d:  -0.01
 
-Pie Exact Accuracy:  0.014705882352941176
+Pie Exact Accuracy:  0.01
 
-Waffle Exact Accuracy:  0.18333333333333332
+Waffle Exact Accuracy:  0.18
 
 
-Pie Accuracy within 2 units:  0.058823529411764705
+Pie Accuracy within 2 units:  0.06
 
-Waffle Accuracy within 2 units:  0.26666666666666666
+Waffle Accuracy within 2 units:  0.27
 
-Pie Accuracy within 5 units:  0.10294117647058823
+Pie Accuracy within 5 units:  0.1
 
 Waffle Accuracy within 5 units:  0.3
 
@@ -224,13 +223,13 @@ Sample Size Pie: 93
 
 Sample Size Waffle: 110
 
-ttest_ind:            t = 2.01377  p = 0.0455989
+ttest_ind:            t = 2.01  p = 0.046
 
-cohen's d:  0.2866735113300187
+cohen's d:  0.29
 
-Pie Exact Accuracy:  0.7741935483870968
+Pie Exact Accuracy:  0.77
 
-Waffle Exact Accuracy:  0.8818181818181818
+Waffle Exact Accuracy:  0.88
 
 ![](images/twelve.png)
 
@@ -242,13 +241,13 @@ Sample Size Pie: 74
 
 Sample Size Waffle: 64
 
-ttest_ind:            t = 3.24751  p = 0.00148098
+ttest_ind:            t = 3.25  p = 0.001
 
-cohen's d:  0.5472657706348194
+cohen's d:  0.55
 
-Pie Exact Accuracy:  0.6486486486486487
+Pie Exact Accuracy:  0.65
 
-Waffle Exact Accuracy:  0.875
+Waffle Exact Accuracy:  0.87
 
 ![](images/thirteen.png)
 
@@ -268,7 +267,7 @@ When looking at waffles specifically, there is hardly any difference, but both a
 
 **Does the distance between slices affect the ability to sum?**
 
-We ask to sum two slices –areas– in the graph. Then, we compare that number with the data. We used two cases, when the size of the slices is similar and when the size of the slices are evidently different.
+We asked to sum two slices –areas– in the graph. Then, we compared that number with the data. We used two cases, one where the size of the slices was similar, and another where the size of the slices was evidently different.
 
 In specific, the question was: **what proportion of customers prefer chocolate and vanilla?**
 
@@ -280,17 +279,17 @@ Sample Size Pie: 65
 
 Sample Size Waffle: 72
 
-ttest_ind:            t = 1.64543  p = 0.102319
+ttest_ind:            t = 1.64  p = 0.1
 
-cohen's d:  0.28237286698646813
+cohen's d:  0.2813
 
-Pie Exact Accuracy:  0.27692307692307694
+Pie Exact Accuracy:  0.28
 
-Waffle Exact Accuracy:  0.5138888888888888
+Waffle Exact Accuracy:  0.51
 
-Pie Accuracy within 2 units:  0.38461538461538464
+Pie Accuracy within 2 units:  0.38
 
-Waffle Accuracy within 2 units:  0.5694444444444444
+Waffle Accuracy within 2 units:  0.57
 
 ![](images/fourteen.png)
 
@@ -302,17 +301,17 @@ Sample Size Pie: 113
 
 Sample Size Waffle: 108
 
-ttest_ind:            t = 1.01656  p = 0.310487
+ttest_ind:            t = 1.02  p = 0.31
 
-cohen's d:  0.1368240306296562
+cohen's d:  0.14
 
-Pie Exact Accuracy:  0.168141592920354
+Pie Exact Accuracy:  0.17
 
-Waffle Exact Accuracy:  0.42592592592592593
+Waffle Exact Accuracy:  0.43
 
-Pie Accuracy within 2 units:  0.25663716814159293
+Pie Accuracy within 2 units:  0.26
 
-Waffle Accuracy within 2 units:  0.5462962962962963
+Waffle Accuracy within 2 units:  0.55
 
 ![](images/fifthteen.png)
 
@@ -330,17 +329,17 @@ Sample Size adjacent 65
 
 Sample Size opposite 113
 
-ttest_ind:            t = 0.179413  p = 0.857905
+ttest_ind:            t = 0.18  p = 0.86
 
-cohen's d:  0.02824924659044252
+cohen's d:  0.03
 
-Adjacent Exact Accuracy:  0.27692307692307694
+Adjacent Exact Accuracy:  0.28
 
-Opposite Exact Accuracy:  0.168141592920354
+Opposite Exact Accuracy:  0.17
 
-Adjacent Accuracy within 2 units:  0.38461538461538464
+Adjacent Accuracy within 2 units:  0.38
 
-Opposite Accuracy within 2 units:  0.25663716814159293
+Opposite Accuracy within 2 units:  0.26
 
 ******************************
 
@@ -352,19 +351,19 @@ Sample Size opposite 108
 
 ttest_ind:            t = -0.82105  p = 0.412859
 
-cohen's d:  -0.12429460517179482
+cohen's d:  -0.12
 
-Adjacent Accuracy:  0.5138888888888888
+Adjacent Accuracy:  0.51
 
-Opposite Accuracy:  0.42592592592592593
+Opposite Accuracy:  0.43
 
-Adjacent Accuracy within 2 units:  0.5694444444444444
+Adjacent Accuracy within 2 units:  0.57
 
-Opposite Accuracy within 2 units:  0.5462962962962963
+Opposite Accuracy within 2 units:  0.55
 
 ******************************
 
-For pies and waffles, there is not a statistically significant difference between sums of adjacency slices –areas– and sums of no-adjacent slices –areas–.
+For pies and waffles, there is no statistically significant difference between sums of adjacency slices –areas– and sums of no-adjacent slices –areas–.
 
 ******************************
 
@@ -374,17 +373,17 @@ Sample Size Pie: 71
 
 Sample Size Waffle: 77
 
-ttest_ind:            t = 2.81039  p = 0.00570223
+ttest_ind:            t = 2.81  p = 0.005
 
-cohen's d:  0.4647176463950014
+cohen's d:  0.46
 
-Pie Exact Accuracy:  0.07042253521126761
+Pie Exact Accuracy:  0.07
 
-Waffle Exact Accuracy:  0.03896103896103896
+Waffle Exact Accuracy:  0.04
 
-Pie Accuracy within 2 units:  0.1267605633802817
+Pie Accuracy within 2 units:  0.13
 
-Waffle Accuracy within 2 units:  0.03896103896103896
+Waffle Accuracy within 2 units:  0.04
 
 ![](images/fourteen.png)
 
@@ -396,22 +395,22 @@ Sample Size Pie: 97
 
 Sample Size Waffle: 97
 
-ttest_ind:            t = -1.11553  p = 0.266111
+ttest_ind:            t = -1.12  p = 0.27
 
-cohen's d:  -0.16018103601792638
+cohen's d:  -0.16
 
-Pie Exact Accuracy:  0.13402061855670103
+Pie Exact Accuracy:  0.13
 
 Waffle Exact Accuracy:  0.0
 
-Pie Accuracy within 2 units:  0.24742268041237114
+Pie Accuracy within 2 units:  0.25
 
-Waffle Accuracy within 2 units:  0.020618556701030927
+Waffle Accuracy within 2 units:  0.02
 
 ![](images/fifthteen.png)
 
 ******************************
-For the adjacency case, when summing slices –areas– of different sizes, the pies perform better than the waffles. The accuracy and the exact accuracy is higher for pie charts. 
+For the adjacency case, when summing slices –areas– of different sizes, the pies perform better than the waffles. The overall accuracy and the exact accuracy is higher for pie charts. 
 
 For the no-adjacency case, pies and waffles have a similar performance.
 ******************************
@@ -422,7 +421,7 @@ For the no-adjacency case, pies and waffles have a similar performance.
 
 We hypothesise that mislabelling, for example, using a cream colour to represent chocolate, might cause confusion. In this experiment, we did not use evident colours in all of the slices –areas–. Then, we asked about the proportion of one slice –area–. 
 
-The question was: **what proportion of the respondents prefer vanilla ice cream?** We had examples where only vanilla correctly labelled, examples in which only vanilla was mislabelled, and examples in which no colour was correctly labelled.
+The question was: **what proportion of the respondents prefer vanilla ice cream?** We had examples where only vanilla was correctly labelled, examples in which only vanilla was mislabelled, and examples in which no colour was correctly labelled.
 
 ******************************
 
@@ -432,18 +431,18 @@ Sample Size Pie: 52
 
 Sample Size Waffle: 56
 
-ttest_ind:            t = -0.876074  p = 0.383138
+ttest_ind:            t = -0.88  p = 0.38
 
-cohen's d:  -0.16758486654130628
+cohen's d:  -0.17
 
-Pie Exact Accuracy:  0.07692307692307693
+Pie Exact Accuracy:  0.08
 
-Waffle Exact Accuracy:  0.6428571428571429
+Waffle Exact Accuracy:  0.64
 
 
 Pie Accuracy within 2 units:  0.5
 
-Waffle Accuracy within 2 units:  0.7321428571428571
+Waffle Accuracy within 2 units:  0.73
 
 
 ![](images/sixteen.png)
@@ -458,18 +457,18 @@ Sample Size Pie: 48
 
 Sample Size Waffle: 48
 
-ttest_ind:            t = 0.900997  p = 0.369927
+ttest_ind:            t = 0.9  p = 0.37
 
-cohen's d:  0.18391515053935278
+cohen's d:  0.18
 
-Pie Exact Accuracy:  0.041666666666666664
+Pie Exact Accuracy:  0.04
 
-Waffle Exact Accuracy:  0.625
+Waffle Exact Accuracy:  0.62
 
 
-Pie Accuracy within 2 units:  0.3958333333333333
+Pie Accuracy within 2 units:  0.39
 
-Waffle Accuracy within 2 units:  0.6875
+Waffle Accuracy within 2 units:  0.69
 
 ![](images/seventeen.png)
 
@@ -482,17 +481,17 @@ Sample Size Pie: 59
 
 Sample Size Waffle: 56
 
-ttest_ind:            t = 0.481192  p = 0.631312
+ttest_ind:            t = 0.48  p = 0.63
 
-cohen's d:  0.08976504305950662
+cohen's d:  0.09
 
-Pie Exact Accuracy:  0.01694915254237288
+Pie Exact Accuracy:  0.02
 
-Waffle Exact Accuracy:  0.21428571428571427
+Waffle Exact Accuracy:  0.21
 
-Pie Accuracy within 2 units:  0.1864406779661017
+Pie Accuracy within 2 units:  0.19
 
-Waffle Accuracy within 2 units:  0.23214285714285715
+Waffle Accuracy within 2 units:  0.23
 
 ![](images/eighteen.png)
 
@@ -502,43 +501,43 @@ In any of the three former cases, no clear difference between pie charts and waf
 
 *Option 4: Pie 1 vs Pie 2. Only vanilla is mislabeled vs Everything is mislabeled but vanilla*
 
-ttest_ind:            t = -1.84585  p = 0.0686893
+ttest_ind:            t = -1.84 p = 0.07
 
-cohen's d:  -0.3726061962862755
+cohen's d:  -0.37
 
-p1 Exact Accuracy:  0.07692307692307693
+p1 Exact Accuracy:  0.08
 
-p2 Exact Accuracy:  0.041666666666666664
+p2 Exact Accuracy:  0.04
 
 p1 Accuracy within 2 units:  0.5
 
-p2 Accuracy within 2 units:  0.3958333333333333
+p2 Accuracy within 2 units:  0.39
 
 *Option 5: Pie 2 vs Pie 3. Everything is mislabeled but vanilla vs Everything mislabelled*
 
-ttest_ind:            t = -0.418012  p = 0.677073
+ttest_ind:            t = -0.42  p = 0.68
 
-cohen's d:  -0.08283142264328558
+cohen's d:  -0.08
 
-p3 Exact Accuracy:  0.01694915254237288
+p3 Exact Accuracy:  0.02
 
-p2 Exact Accuracy:  0.041666666666666664
+p2 Exact Accuracy:  0.04
 
-p3 Accuracy within 2 units:  0.1864406779661017
+p3 Accuracy within 2 units:  0.19
 
-p2 Accuracy within 2 units:  0.3958333333333333
+p2 Accuracy within 2 units:  0.39
 
 *Option 6: Pie 1 vs Pie 3. Only vanilla is mislabeled vs Everything mislabelled*
 
-ttest_ind:            t = 1.9517  p = 0.0535532
+ttest_ind:            t = 1.95  p = 0.05
 
-cohen's d:  0.37060457019253235
+cohen's d:  0.37
 
-p3 Exact Accuracy:  0.01694915254237288
+p3 Exact Accuracy:  0.02
 
-p1 Exact Accuracy:  0.07692307692307693
+p1 Exact Accuracy:  0.08
 
-p3 Accuracy within 2 units:  0.1864406779661017
+p3 Accuracy within 2 units:  0.19
 
 p1 Accuracy within 2 units:  0.5
 
