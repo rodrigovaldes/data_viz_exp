@@ -135,7 +135,7 @@ Does the total number of observations affect the reader's ability to estimate th
 
 We provided the user with a total number of individuals represented in the graph. That is to say, we mentioned that the pie –waffle– represented 1000 individuals, for example.
 
-There are two main cases: when the total number of respondents is 1000, and when the total number of respondents is 874. The intuition behind is that 874, as a non-round number, might be more difficult to interpret. 
+There are two main cases: when the total number of respondents is 1000, and when the total number of respondents is 874. The intuition is that 874, as a non-round number, might be more difficult to interpret. 
 
 Sample Size Pie: 72
 
@@ -198,7 +198,7 @@ The first step was investigating how accurately people are able to assess the pr
 
 Does the position of the slice –area– affect the perception of its size?
 
-If a graph is robust, it should be so not matter where the data of certain category is located. Then, for instance, if a slice is located in the top of a pie chart –or waffle chart–, it = should be perceived as being the same size as if it were in the bottom of the pie chart –waffle chart–.
+If a graph is robust, it should be so not matter where the data of certain category is located. Then, for instance, if a slice is located in the top of a pie chart –or waffle chart–, it should be perceived as being the same size as if it were in the bottom of the pie chart –waffle chart–.
 
 For the pie chart, we fixed the location of all slices except one, which we rotate in the graph. For the waffle chart, we conducted a similar process. 
 
@@ -334,8 +334,8 @@ Adjacent Accuracy within 2 units:  0.5694444444444444
 
 Opposite Accuracy within 2 units:  0.5462962962962963
 
-The next step was meassuring for adjacency again, but with slices of similar size. The results show that adjacent waffles are better than adjacent pies, with a p value of 0.1, which indicates a small effect size. Accuracy is, however, higher in both cases when adjacent. When slices are not so, the difference is statistically not significant, but waffle charts retain an edge.
-The difference between pies with adjacent slices and not adjacent is not statiscally significant, and adjacency does not seem to play too large a role in determining the proportion for waffle charts.
+The next step was measuring for adjacency again, but with slices of similar size. The results show that adjacent waffles are better than adjacent pies, with a p value of 0.1, which indicates a small effect size. Accuracy is, however, higher in both cases when adjacent. When slices are not so, the difference is statistically not significant, but waffle charts retain an edge.
+The difference between pies with adjacent slices and not adjacent is not statistically significant, and adjacency does not seem to play too large a role in determining the proportion for waffle charts.
 
 Adjacent
 
@@ -408,7 +408,7 @@ When comparing adjacent slices versus slices that are in an opposite position, t
 
 #### Sixth experiment
 
-Does the correct oflabeling of the charts affect perception of the proportions in them?
+Does the correct of labeling of the charts affect perception of the proportions in them?
 
 We hypothesise that mislabelling, for example, using a cream colour to represent chocolate, might cause confusion. In this experiment, we did not use evident colours in all of the slices –areas–. Then, we asked about the proportion of one slice –area–. The question was: what proportion of the respondents prefer vanilla ice cream? We had examples where only vanilla correctly labelled, examples in which only vanilla was mislabelled, and examples in which no colour was correctly labelled.
 
@@ -625,4 +625,4 @@ From these, nothing noteworthy is observed.
 
 ### Conclusions
 
-All in all, waffle charts allow for greater accuracy than pie charts. All throught the range of questions, they consistently outperformed the pie charts. However, the failure of the timing variable to work as intended might have had some effect which we could not observe. Thus, waffle charts emerge as clear winners on the atribute of functionality. As for beauty, it might be argued that people prefer pie charts, but his might simply be simply because they are used to them, but there is no reason for which waffle charts should not become a more widespread visualisation tool, since they offer significant advantages.  
+All in all, waffle charts allow for greater accuracy than pie charts. All throughout the range of questions, they consistently outperformed the pie charts. However, the failure of the timing variable to work as intended might have had some effect which we could not observe. Thus, waffle charts emerge as clear winners on the attribute of functionality. As for beauty, it might be argued that people prefer pie charts, but this might simply be simply because they are used to them, but there is no reason for which waffle charts should not become a more widespread visualisation tool, since they offer significant advantages.  
