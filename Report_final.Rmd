@@ -22,11 +22,11 @@ The survey ran for 5 days and a total of 210 surveys were considered for this an
 
 ### Methodology
 
-We set up five experiments to test waffle and pie charts in five different situations. The main question behind these experiments was to find out which of the two graphs provides the most accurate information, defined as the deviation of the real data to the perception of the reader. 
+We set up five experiments to test waffle and pie charts in five different situations. The main question behind these experiments was to find out which of the two graphs provides the most accurate information, defined as the deviation of the real data to what the reader perceives. 
 
 For all the cases, we used up to six different flavors of ice cream to label our graphs. For each case, we used the same data and order to create a pie chart and a waffle chart. Then, we were able to compare the performance of a waffle chart versus a pie chart. In addition, in some cases, we compared the performance of slight variations of a pie or waffle chart.
 
-To asses the difference between two vectors of results, we used four main tools. First, we use a simple t-test for difference in the means. Second, we utilized the Cohen's d, which a measure that indicates the standardized difference among two means. That is to say, it is the difference in the means divided by the pooled standard deviation. Third, we built a measure of exact accuracy, which is the proportion of exactly correct answers. Fourth, we used a measure of accuracy with X units, where an answer is considered correct if it is X units above or below the exactly correct answer.
+To asses the difference between two vectors of results, we used four main tools. First, we used a simple t-test for the difference in the means. Second, we utilized Cohen's d, a measure that indicates the standardized difference among two means. That is to say, it is the difference in the means divided by the pooled standard deviation. Third, we built a measure of exact accuracy, which is the proportion of exactly correct answers. Fourth, we used a measure of accuracy with X units, where an answer is considered correct if it is X units above or below the exactly correct answer.
 
 
 ![average time spent in quiz](images/one.png)
@@ -35,7 +35,7 @@ To asses the difference between two vectors of results, we used four main tools.
 
 **Does the perception of the size of a slice -area- depends on the size of the other slices -areas-?**
 
-We fixed the size of one slice -area– (vanilla), and changed the size of all the other slices –areas– in different ways. Intuitively, the best chart should represent the same data no matter if the size of the other slices –areas– changed. We tested four different combinations for the sizes of other slices –areas–. The pie 1 uses the same data as the waffle 1, an so on.
+We fixed the size of one slice -area– (vanilla), and changed the size of all the other slices –areas– in different ways. Intuitively, the best chart should represent the same data no matter if the size of the other slices –areas– changed. We tested four different combinations for the sizes of other slices –areas–. Pie 1 uses the same data as waffle 1, an so on.
 
 *Option 1*
 
@@ -128,7 +128,7 @@ Waffle Accuracy within 2 units:  0.72
 
 There are no significant differences between the pies and the waffles in the means. Then, there is not a definitive winner between pies and waffles. However, the exact accuracy is higher for waffles in all cases.
 
-The higher accuracy of waffles might be caused by people counting squares, which might require more time against pies. Then, further study is needed to have a better conclusion of which graph is better when there are time constraints.
+The higher accuracy of waffles might be caused by people counting squares, which might require more time against pies. Thus, further study is needed to have a better conclusion of which graph is better when there are time constraints.
 
 
 ## Experiment 2
@@ -196,7 +196,7 @@ Waffle Accuracy within 5 units:  0.3
 
 ******************************
 
-How accurately are people able to assess the proportion out of a whole? Is it different their assessment in pies and waffles? If we state that the total number of respondents was 1000, the difference in means was statistically significant (10%), with a small effect size as indicated by a Cohen’s d value of 0.27. Then, people are better at estimating with waffles. 
+Assessment between pie charts and waffle charts showed certain differences. If we stated that the total number of respondents was 1000, the difference in means was statistically significant (10%), with a small effect size as indicated by a Cohen’s d value of 0.27. This shows that people are better at estimating with waffles. 
 
 If we provide a non-round number of respondents, 874, this difference disappears. It must be said that exact accuracy is low, but this is likely because the way to input the answer was using a slider bar, so accuracy within two units was high. For example, when a correct answer was 140, there are a large number of answers that are either 139 or 141. 
 
@@ -255,7 +255,7 @@ Waffle Exact Accuracy:  0.87
 
 **Overall results Experiment 3**
 
-Afterwards, assessing the size of adjacent slices with visibly different proportions was tested.  The difference between pies and waffles was statistically significant in both cases, with p = 0.04, and p = 0.001 respectively. People were able to assess the size more accurately with waffles than pies for both cases. The effect size was small when slices were adjacent (Cohen’s d = 0.2866), but bigger when they were not (Cohen’s d = 0.5472). 
+When assessing the size of adjacent slices with visibly different proportions,  the difference between pies and waffles was statistically significant in both cases, with p = 0.04, and p = 0.001 respectively. People were able to assess the size more accurately with waffles than pies for both cases. The effect size was small when slices were adjacent (Cohen’s d = 0.2866), but bigger when they were not (Cohen’s d = 0.5472). 
 
 It can also be inferred that it is easier to compare slices when they are adjacent, as can be seen from the statistically significant, and the small effect size. Accuracy also rises for adjacent slices.
 
@@ -267,9 +267,9 @@ When looking at waffles specifically, there is hardly any difference, but both a
 
 **Does the distance between slices affect the ability to sum?**
 
-We asked to sum two slices –areas– in the graph. Then, we compared that number with the data. We used two cases, one where the size of the slices was similar, and another where the size of the slices was evidently different.
+We asked survey takers to sum two slices –areas– in the graph. Then, we compared that number with the data. We used two cases, one where the size of the slices was similar, and another where the size of the slices was evidently different.
 
-In specific, the question was: **what proportion of customers prefer chocolate and vanilla?**
+The question was: **what proportion of customers prefer chocolate and vanilla?**
 
 
 *Option 1: Sum adjacent slices -areas- when the size of the areas are similar*
@@ -417,9 +417,9 @@ For the no-adjacency case, pies and waffles have a similar performance.
 
 ## Experiment 5
 
-**Does the correctness of labeling of the charts affect perception of the proportions in them?**
+**Does the correct labelling of the charts affect perception of the proportions in them?**
 
-We hypothesise that mislabelling, for example, using a cream colour to represent chocolate, might cause confusion. In this experiment, we did not use evident colours in all of the slices –areas–. Then, we asked about the proportion of one slice –area–. 
+We hypothesise that mislabelling, for example, using a cream colour to represent chocolate, might cause confusion. In this experiment, we did not necessarily use colours eviently associated with the flavours in all of the slices –areas–. Then, we asked about the proportion of one slice –area–. 
 
 The question was: **what proportion of the respondents prefer vanilla ice cream?** We had examples where only vanilla was correctly labelled, examples in which only vanilla was mislabelled, and examples in which no colour was correctly labelled.
 
@@ -544,14 +544,14 @@ p1 Accuracy within 2 units:  0.5
 ******************************
 All in all, pie 1 is better than pie 2 and 3. However, the significance is low ~0.06. 
 
-Then, we can conclude that there is partial evidence that only modifying the color of the label of the flavor that you ask for migth increase the accuracy in the perception of the proportion of that flavor.  
+Then, we can conclude that there is partial evidence that only modifying the color of the label of the flavor that you ask for might increase the accuracy in the perception of the proportion of that flavor.  
 
-Any other change in labeling is not statistically significant against other cases.
+Any other change in labelling is not statistically significant against other cases.
 ******************************
 
 *Option 7: Different options in labeling of waffles*
 
-We conducted exactly the same comparisons among waffles. However, in any case, it was not a significant difference among any of the cases. Then, apparently, pies are slightly more sensitive to incorrect labeling. 
+We conducted exactly the same comparisons among waffles. However, it was not a significant difference among any of the cases. Then, apparently, pies are slightly more sensitive to incorrect labeling. 
 
 
 ### Conclusions
@@ -560,5 +560,5 @@ All in all, waffle charts allow for greater accuracy than pie charts. All throug
 
 One of the limitations of this study is that even when we found that in experiment 1, 2, and 3 waffles outperform pies, maybe waffles take more time to be interpreted. Then, maybe waffles are not the best option sometimes, but more research is needed to asses timing issues.
 
-Thus, waffle charts, emerge as clear winners on the attribute of functionality. As for beauty, it might be argued that people prefer pie charts, but this might simply be simply because they are used to them, but there is no reason for which waffle charts should not become a more widespread visualization tool since they offer significant advantages.
+Thus, waffle charts, emerge as clear winners on the attribute of functionality. As for beauty, it might be argued that people prefer pie charts, but this might simply be simply because they are used to them. However, there is no reason for which waffle charts should not become a more widespread visualization tool since they offer significant advantages.
 
