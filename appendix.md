@@ -1,29 +1,16 @@
 ---
-title: "Pretty Plots"
-author: "Beau Harrison"
-date: "May 5, 2018"
+title: "Appendix"
+author: "Rafael Cruz Gil, Sushmita Gopalan, Beau Harrison, Rodrigo Valdés"
+date: "4 May 2018"
 output:
   html_document:
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(ggplot2)
-library(waffle)
-library(cowplot)
-```
 
-```{r}
-one_chart <- function(fileName, listOfPlots) {
-  file <- paste(fileName, '.png', sep = '')
-  path <- file.path(getwd(), 'prettyPlots', file)
-  plot_grid(plotlist = listOfPlots)
-  ggsave(path)
-}
-```
 
-```{r}
+
+```r
 blank_theme <- theme_minimal()+
   theme(
   axis.title.x = element_blank(),
@@ -35,7 +22,8 @@ blank_theme <- theme_minimal()+
   )
 ```
 
-```{r}
+
+```r
 pie_function <- function(number, order, color_baseline, flavor) {
   df <- data.frame(flavor, number)
   df$flavor <- factor(df$flavor, flavor[order])
@@ -49,9 +37,12 @@ pie_function <- function(number, order, color_baseline, flavor) {
 }
 ```
 
-# 1. Does the perception of the size of one slice depend on the size of the other slices?
+## Experiment 1
 
-```{r}
+**Does the perception of the size of a slice -area- depends on the size of the other slices -areas-?**
+
+
+```r
 flavor <- c('vanilla', 'chocolate', 'strawberry', 'lemon', 'orange')
 order = c(1,2,3,4,5)
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
@@ -97,14 +88,26 @@ waffle14 <- waffle(c(`Vanilla` = 14,
           colors = color_baseline)
 ```
 
-```{r}
-one_chart('1-pie', list(pie11, pie12, pie13, pie14))
-one_chart('1-waffle', list(waffle11, waffle12, waffle13, waffle14))
+
+```r
+plot_grid(plotlist = list(pie11, pie12, pie13, pie14))
 ```
 
-# 2. Does the total number of observations affect the reader's ability to estimate sizes?
+![](appendix_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
-```{r}
+```r
+plot_grid(plotlist = list(waffle11, waffle12, waffle13, waffle14))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-4-2.png)<!-- -->
+
+## Experiment 2
+
+
+**Does the total number of observations affect the reader's ability to estimate the size of a slice –area–?**
+
+
+```r
 number <- c(14, 17, 21, 23, 25)
 df <- data.frame(flavor, number)
 df$flavor <- factor(df$flavor, flavor[order])
@@ -143,14 +146,27 @@ waffle22 <- waffle(c(`Vanilla` = 14,
           title = "Number of Respondents: 874")
 ```
 
-```{r}
-one_chart('2-pie', list(pie21, pie22))
-one_chart('2-waffle', list(waffle21, waffle22))
+
+```r
+plot_grid(plotlist = list(pie21, pie22))
 ```
 
-# 3. Does the position affect the reader's ability to estimate size?
+![](appendix_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
-```{r}
+```r
+plot_grid(plotlist = list(waffle21, waffle22))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-6-2.png)<!-- -->
+
+## Experiment 3
+
+**Does the position of the slice –area– affect the perception of its size?**
+
+Specifically: **Is the size of the orange slice bigger than the lemon slice?**
+
+
+```r
 order_1 = c(1,2,3,4,5)
 order_4 = c(1,4,2,3,5)
 
@@ -195,156 +211,27 @@ waffle34 <- waffle(three4_waffle,
          "darkorange2"))
 ```
 
-```{r}
-one_chart('3-pie', list(pie31, pie34))
-one_chart('3-waffle', list(waffle31, waffle34))
+
+```r
+plot_grid(plotlist = list(pie31, pie34))
 ```
 
-# 4. Does the order affect the reader's ability to estimate size?
+![](appendix_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
-```{r}
-flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'orange')
-number <- c(13, 16, 17, 25, 29)
-
-order_1 = c(1,2,3,4,5)
-order_2 = c(1,2,3,5,4)
-order_3 = c(2,1,3,4,5)
-order_4 = c(5,4,3,2,1)
-order_5 = c(4,5,3,2,1)
-order_6 = c(5,4,3,1,2)
-
-four_df <- data.frame(flavor, number)
-
-four1_waffle <- c(`Vanilla` = 13,
-                 `Chocolate` = 16,
-                 `Strawberry` = 17,
-                 `Lemon` = 25,
-                 `Orange` = 29)
-
-four2_waffle <- c(`Vanilla` = 13,
-                 `Chocolate` = 16,
-                 `Strawberry` = 17,
-                 `Orange` = 29,
-                 `Lemon` = 25)
-
-four3_waffle <- c(`Chocolate` = 16,
-                  `Vanilla` = 13,
-                 `Strawberry` = 17,
-                 `Lemon` = 25,
-                 `Orange` = 29)
-
-four4_waffle <- c(`Orange` = 29,
-                  `Lemon` = 25,
-                  `Strawberry` = 17,
-                  `Chocolate` = 16,
-                  `Vanilla` = 13)
-
-four5_waffle <- c(`Lemon` = 25,
-                  `Orange` = 29,
-                  `Strawberry` = 17,
-                  `Chocolate` = 16,
-                  `Vanilla` = 13)
-
-four6_waffle <- c(`Orange` = 29,
-                  `Lemon` = 25,
-                  `Strawberry` = 17,
-                  `Vanilla` = 13,
-                  `Chocolate` = 16)
+```r
+plot_grid(plotlist = list(waffle31, waffle34))
 ```
 
-```{r}
-pie41 <- pie_function(four_df, order_1, color_baseline, flavor)
+![](appendix_files/figure-html/unnamed-chunk-8-2.png)<!-- -->
 
-waffle41 <- waffle(four1_waffle,
-       rows = 10,
-       xlab = "One square = One percent",
-       colors = c(
-         "lightgoldenrodyellow",
-         "chocolate4",
-         "brown2",
-         "yellow2",
-         "darkorange2"
-        )
-       )
+## Experiment 4 
 
-pie42 <- pie_function(four_df, order_2, color_baseline, flavor)
+**Does the distance between slices affect the ability to sum?**
 
-waffle42 <- waffle(four2_waffle,
-       rows = 10,
-       xlab = "One square = One percent",
-       colors = c(
-         "lightgoldenrodyellow",
-         "chocolate4",
-         "brown2",
-         "darkorange2",
-         "yellow2"
-        )
-       )
+Specifically: **What proportion of customers prefer chocolate and vanilla?**
 
-pie43 <- pie_function(four_df, order_3, color_baseline, flavor)
 
-waffle43 <- waffle(four3_waffle,
-       rows = 10,
-       xlab = "One square = One percent",
-       colors = c(
-         "chocolate4",
-         "lightgoldenrodyellow",
-         "brown2",
-         "yellow2",
-         "darkorange2"
-        )
-       ) 
-pie44 <- pie_function(four_df, order_4, color_baseline, flavor)
-
-waffle44 <- waffle(four4_waffle,
-       rows = 10,
-       xlab = "One square = One percent",
-       colors = c(
-         "orange2",
-         "yellow2",
-         "brown2",
-         "chocolate4",
-         "lightgoldenrodyellow"
-        )
-       )
-
-pie45 <- pie_function(four_df, order_5, color_baseline, flavor)
-
-waffle45 <- waffle(four5_waffle,
-       rows = 10,
-       xlab = "One square = One percent",
-       colors = c(
-         "yellow2",
-         "orange2",
-         "brown2",
-         "chocolate4",
-         "lightgoldenrodyellow"
-        )
-       )
-
-pie46 <- pie_function(four_df, order_6, color_baseline, flavor)
-
-waffle46 <- waffle(four6_waffle,
-       rows = 10,
-       xlab = "One square = One percent",
-       colors = c(
-         "orange2",
-         "yellow2",
-         "brown2",
-         "lightgoldenrodyellow",
-         "chocolate4"
-        )
-       )
-```
-
-```{r}
-one_chart('4-pie', list(pie41, pie42, pie43, pie44, pie45, pie46))
-one_chart('4-waffle', list(waffle41, waffle42, waffle43, waffle44, waffle45, waffle46))
-```
-
-# 5. Does the distance between areas affect the reader's ability to sum them?
-
-```{r}
+```r
 order_1 = c(1,2,3,4,5,6)
 order_2 = c(1,3,2,4,5,6)
 order_3 = c(1,3,4,2,5,6)
@@ -354,7 +241,8 @@ order_5 = c(1,3,4,5,6,2)
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2", "navy")
 ```
 
-```{r}
+
+```r
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
 number <- c(9, 16, 20, 24, 18, 13)
 five_df <- data.frame(flavor, number)
@@ -402,14 +290,27 @@ waffle52 <- waffle(five2_waffle,
        )
 ```
 
-```{r}
-one_chart('5-pie', list(pie51, pie52))
-one_chart('5-waffle', list(waffle51, waffle52))
+
+```r
+plot_grid(plotlist = list(pie51, pie52))
 ```
 
-# 6. Does color affect the reader's ability to estimate size?
+![](appendix_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
-```{r}
+```r
+plot_grid(plotlist = list(waffle51, waffle52))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-11-2.png)<!-- -->
+
+## Experiment 5
+
+**Does the correctness of labeling of the charts affect perception of the proportions in them?**
+
+Specificially: **What proportion of the respondents prefer vanilla ice cream?**
+
+
+```r
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
 number <- c(9, 16, 20, 24, 18, 13)
 
@@ -492,8 +393,16 @@ waffle63 <- waffle(six3_waffle,
        )
 ```
 
-```{r}
-one_chart('6-pie', list(pie61, pie62, pie63))
-one_chart('6-waffle', list(waffle61, waffle62, waffle63))
+
+```r
+plot_grid(plotlist = list(pie61, pie62, pie63))
 ```
+
+![](appendix_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+
+```r
+plot_grid(plotlist = list(waffle61, waffle62, waffle63))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-13-2.png)<!-- -->
 
