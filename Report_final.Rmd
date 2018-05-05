@@ -39,17 +39,15 @@ We fixed the size of one slice -area– (vanilla), and changed the size of all t
 
 *Option 1*
 
-Sample Size Pie: 40
-
-Sample Size Waffle: 45
-
-ttest_ind:            t = -0.36  p = 0.72
-
-cohen's d:  -0.079
-
-Pie Exact Accuracy:  0.05
-
-Waffle Exact Accuracy:  0.47
+Concept  |   Stat
+:--|--
+Sample Size Pie  | 40  
+Sample Size Waffle  | 45
+ttest  | -0.36 (p=0.72)
+cohen's d  | -0.079
+Pie Exact Accuracy  | 0.5
+Waffle Exact Accuracy | 0.47
+ | |
 
 ![](images/two.png)
 
