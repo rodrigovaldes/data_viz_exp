@@ -1,12 +1,6 @@
----
-title: "Waffles vs Pies"
-author: "Rafael Cruz Gil, Sushmita Gopalan, Beau Harrison, Rodrigo Valdés"
-date: "4 May 2018"
-output:
-  html_document:
-     keep_md: true
-     toc: true
----
+# Waffles vs Pies
+Rafael Cruz Gil, Sushmita Gopalan, Beau Harrison, Rodrigo Valdés  
+4 May 2018  
 
 
 
@@ -37,100 +31,85 @@ To asses the difference between two vectors of results, we used four main tools.
 
 We fixed the size of one slice -area– (vanilla), and changed the size of all the other slices –areas– in different ways. Intuitively, the best chart should represent the same data no matter if the size of the other slices –areas– changed. We tested four different combinations for the sizes of other slices –areas–. Pie 1 uses the same data as waffle 1, an so on.
 
-
 *Option 1*
 
-Sample Size Pie: 40
-
-Sample Size Waffle: 45
-
-ttest_ind:            t = -0.36  p = 0.72
-
-cohen's d:  -0.079
-
-Pie Exact Accuracy:  0.05
-
-Waffle Exact Accuracy:  0.47
+Concept  |   Stat
+:--|--
+Sample Size Pie  | 40  
+Sample Size Waffle  | 45
+ttest  | -0.36 (p=0.72)
+cohen's d  | -0.079
+Pie Exact Accuracy  | 0.5
+Waffle Exact Accuracy | 0.47
+Pie Accuracy within 2 units | 0.43
+Waffle Accuracy within 2 units | 0.62
+ | |
 
 ![](images/two.png)
 
 
-Pie Accuracy within 2 units:  0.43
 
-Waffle Accuracy within 2 units:  0.62
+
 ******************************
+
 *Option  2*
 
-Sample Size Pie: 48
-
-Sample Size Waffle: 36
-
-ttest_ind:            t = 1.26  p = 0.21
-
-cohen's d:  0.28
-
-Pie Exact Accuracy:  0.06
-
-Waffle Exact Accuracy:  0.72
-
-
-Pie Accuracy within 2 units:  0.33
-
-Waffle Accuracy within 2 units:  0.81
+Concept  |   Stat
+:--|--
+Sample Size Pie  | 48
+Sample Size Waffle  | 36
+ttest  | 1.26 (p=0.21)
+cohen's d  | 0.28
+Pie Exact Accuracy  | 0.06
+Waffle Exact Accuracy | 0.72
+Pie Accuracy within 2 units | 0.33
+Waffle Accuracy within 2 units | 0.81
+ | |
 
 ![](images/three.png)
 
 ******************************
+
 *Option  3*
 
-Sample Size Pie: 32
-
-Sample Size Waffle: 40
-
-ttest_ind:            t = 0.76  p = 0.45
-
-cohen's d:  0.18
-
-Pie Exact Accuracy:  0.06
-
-Waffle Exact Accuracy:  0.55
-
-
-
-Pie Accuracy within 2 units:  0.41
-
-Waffle Accuracy within 2 units:  0.65
+Concept  |   Stat
+:--|--
+Sample Size Pie | 32
+Sample Size Waffle | 40
+ttest | 0.76 (p = 0.45)
+cohen's d | 0.18
+Pie Exact Accuracy | 0.06
+Waffle Exact Accuracy | 0.55
+Pie Accuracy within 2 units | 0.41
+Waffle Accuracy within 2 units | 0.65
+ | | 
 
 ![](images/four.png)
 
 ******************************
 *Option  4*
 
-Sample Size Pie: 45
-
-Sample Size Waffle: 50
-
-ttest_ind:            t = 0.22  p = 0.83
-
-cohen's d:  0.045
-
-Pie Exact Accuracy:  0.07
-
-Waffle Exact Accuracy:  0.62
-
-Pie Accuracy within 2 units:  0.47
-
-Waffle Accuracy within 2 units:  0.72
+Concept  |   Stat
+:--|--
+Sample Size Pie | 45
+Sample Size Waffle | 50
+ttest | 0.22  (p = 0.83)
+cohen's d | 0.045
+Pie Exact Accuracy | 0.07
+Waffle Exact Accuracy | 0.62
+Pie Accuracy within 2 units | 0.47
+Waffle Accuracy within 2 units | 0.72
+ | | 
 
 ![](images/five.png)
 
 ******************************
-**Overall results Experiment 1**
 
 There are no significant differences between the pies and the waffles in the means. Then, there is not a definitive winner between pies and waffles. However, the exact accuracy is higher for waffles in all cases.
 
 The higher accuracy of waffles might be caused by people counting squares, which might require more time against pies. Thus, further study is needed to have a better conclusion of which graph is better when there are time constraints.
 
+******************************
 
 ## Experiment 2
 
@@ -143,55 +122,42 @@ There are two main cases: when the total number of respondents is 1000, and when
 
 *Option  1*
 
-Sample Size Pie: 72
-
-Sample Size Waffle: 69
-
 N =  1000
 
-ttest_ind:            t = 1.62  p = 0.11
-
-cohen's d:  0.2721334444241711
-
-Pie Exact Accuracy:  0.014
-Waffle Exact Accuracy:  0.0
-
-
-Pie Accuracy within 2 units:  0.11
-
-Waffle Accuracy within 2 units:  0.42
-
-Pie Accuracy within 5 units:  0.17
-
-Waffle Accuracy within 5 units:  0.42
+Concept  |   Stat
+:--|--
+Sample Size Pie | 72
+Sample Size Waffle | 69
+ttest | 1.62  (p = 0.11)
+cohen's d | 0.27
+Pie Exact Accuracy | 0.014
+Waffle Exact Accuracy | 0.0
+Pie Accuracy within 2 units | 0.11
+Waffle Accuracy within 2 units | 0.42
+Pie Accuracy within 5 units | 0.17
+Waffle Accuracy within 5 units | 0.42
+ | |
 
 ![](images/eight.png)
 
 ******************************
 *Option  2*
 
-Sample Size Pie: 68
-
-Sample Size Waffle: 60
-
 N =  874
 
-ttest_ind:            t = -0.08  p = 0.945
-
-cohen's d:  -0.01
-
-Pie Exact Accuracy:  0.01
-
-Waffle Exact Accuracy:  0.18
-
-
-Pie Accuracy within 2 units:  0.06
-
-Waffle Accuracy within 2 units:  0.27
-
-Pie Accuracy within 5 units:  0.1
-
-Waffle Accuracy within 5 units:  0.3
+Concept  |   Stat
+:--|--
+Sample Size Pie | 68
+Sample Size Waffle | 60
+ttest | -0.08  (p = 0.945)
+cohen's d | -0.01
+Pie Exact Accuracy | 0.01
+Waffle Exact Accuracy | 0.18
+Pie Accuracy within 2 units | 0.06
+Waffle Accuracy within 2 units | 0.27
+Pie Accuracy within 5 units | 0.1
+Waffle Accuracy within 5 units | 0.3
+ | |
 
 ![](images/nine.png)
 
@@ -219,18 +185,16 @@ Besides, we also conducted tests on whether adjacency to other slices affect its
 
 *Option  1: Adjacent slices or areas*
 
+Concept  |   Stat
+:--|--
+Sample Size Pie | 93
+Sample Size Waffle | 110
+ttest | 2.01  (p = 0.046)
+cohen's d | 0.29
+Pie Exact Accuracy | 0.77
+Waffle Exact Accuracy | 0.88
+ | | 
 
-Sample Size Pie: 93
-
-Sample Size Waffle: 110
-
-ttest_ind:            t = 2.01  p = 0.046
-
-cohen's d:  0.29
-
-Pie Exact Accuracy:  0.77
-
-Waffle Exact Accuracy:  0.88
 
 ![](images/twelve.png)
 
@@ -238,23 +202,19 @@ Waffle Exact Accuracy:  0.88
 
 *Option  1: Opposite slices or areas*
 
-Sample Size Pie: 74
-
-Sample Size Waffle: 64
-
-ttest_ind:            t = 3.25  p = 0.001
-
-cohen's d:  0.55
-
-Pie Exact Accuracy:  0.65
-
-Waffle Exact Accuracy:  0.87
+Concept  |   Stat
+:--|--
+Sample Size Pie | 74
+Sample Size Waffle | 64
+ttest | 3.25  (p = 0.001)
+cohen's d | 0.55
+Pie Exact Accuracy | 0.65
+Waffle Exact Accuracy | 0.87
+ | | 
 
 ![](images/thirteen.png)
 
 ******************************
-
-**Overall results Experiment 3**
 
 When assessing the size of adjacent slices with visibly different proportions,  the difference between pies and waffles was statistically significant in both cases, with p = 0.04, and p = 0.001 respectively. People were able to assess the size more accurately with waffles than pies for both cases. The effect size was small when slices were adjacent (Cohen’s d = 0.2866), but bigger when they were not (Cohen’s d = 0.5472). 
 
