@@ -7,7 +7,7 @@ output:
     keep_md: true
 ---
 
-Below is an example of the questions on the survey. The first larger image was captured from the survey showing the exact Qualtrics configuration along with the slider for user input. Second, each of the variants that were chosen at random to be shown to a survey participant. To be clear a single respondent would have only seen one chart from each of the following categories.
+Below is an example of the questions on the survey. The first larger image was captured from the survey showing the exact Qualtrics configuration along with the slider for user input. Second, each of the variants that were chosen at random to be shown to a survey participant. To be clear a single respondent would have only seen one pie chart and one waffle chart from each experiment.
 
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
