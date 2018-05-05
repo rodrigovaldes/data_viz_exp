@@ -7,14 +7,10 @@ output:
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(ggplot2)
-library(waffle)
-library(cowplot)
-```
 
-```{r}
+
+
+```r
 one_chart <- function(fileName, listOfPlots) {
   file <- paste(fileName, '.png', sep = '')
   path <- file.path(getwd(), 'prettyPlots', file)
@@ -23,7 +19,8 @@ one_chart <- function(fileName, listOfPlots) {
 }
 ```
 
-```{r}
+
+```r
 blank_theme <- theme_minimal()+
   theme(
   axis.title.x = element_blank(),
@@ -35,7 +32,8 @@ blank_theme <- theme_minimal()+
   )
 ```
 
-```{r}
+
+```r
 pie_function <- function(number, order, color_baseline, flavor) {
   df <- data.frame(flavor, number)
   df$flavor <- factor(df$flavor, flavor[order])
@@ -51,7 +49,8 @@ pie_function <- function(number, order, color_baseline, flavor) {
 
 # 1. Does the perception of the size of one slice depend on the size of the other slices?
 
-```{r}
+
+```r
 flavor <- c('vanilla', 'chocolate', 'strawberry', 'lemon', 'orange')
 order = c(1,2,3,4,5)
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
@@ -97,14 +96,27 @@ waffle14 <- waffle(c(`Vanilla` = 14,
           colors = color_baseline)
 ```
 
-```{r}
+
+```r
 one_chart('1-pie', list(pie11, pie12, pie13, pie14))
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 one_chart('1-waffle', list(waffle11, waffle12, waffle13, waffle14))
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 # 2. Does the total number of observations affect the reader's ability to estimate sizes?
 
-```{r}
+
+```r
 number <- c(14, 17, 21, 23, 25)
 df <- data.frame(flavor, number)
 df$flavor <- factor(df$flavor, flavor[order])
@@ -143,14 +155,27 @@ waffle22 <- waffle(c(`Vanilla` = 14,
           title = "Number of Respondents: 874")
 ```
 
-```{r}
+
+```r
 one_chart('2-pie', list(pie21, pie22))
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 one_chart('2-waffle', list(waffle21, waffle22))
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 # 3. Does the position affect the reader's ability to estimate size?
 
-```{r}
+
+```r
 order_1 = c(1,2,3,4,5)
 order_4 = c(1,4,2,3,5)
 
@@ -195,14 +220,27 @@ waffle34 <- waffle(three4_waffle,
          "darkorange2"))
 ```
 
-```{r}
+
+```r
 one_chart('3-pie', list(pie31, pie34))
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 one_chart('3-waffle', list(waffle31, waffle34))
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 # 4. Does the order affect the reader's ability to estimate size?
 
-```{r}
+
+```r
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'orange')
 number <- c(13, 16, 17, 25, 29)
 
@@ -252,7 +290,8 @@ four6_waffle <- c(`Orange` = 29,
                   `Chocolate` = 16)
 ```
 
-```{r}
+
+```r
 pie41 <- pie_function(four_df, order_1, color_baseline, flavor)
 
 waffle41 <- waffle(four1_waffle,
@@ -337,14 +376,27 @@ waffle46 <- waffle(four6_waffle,
        )
 ```
 
-```{r}
+
+```r
 one_chart('4-pie', list(pie41, pie42, pie43, pie44, pie45, pie46))
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 one_chart('4-waffle', list(waffle41, waffle42, waffle43, waffle44, waffle45, waffle46))
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 # 5. Does the distance between areas affect the reader's ability to sum them?
 
-```{r}
+
+```r
 order_1 = c(1,2,3,4,5,6)
 order_2 = c(1,3,2,4,5,6)
 order_3 = c(1,3,4,2,5,6)
@@ -354,7 +406,8 @@ order_5 = c(1,3,4,5,6,2)
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2", "navy")
 ```
 
-```{r}
+
+```r
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
 number <- c(9, 16, 20, 24, 18, 13)
 five_df <- data.frame(flavor, number)
@@ -402,14 +455,27 @@ waffle52 <- waffle(five2_waffle,
        )
 ```
 
-```{r}
+
+```r
 one_chart('5-pie', list(pie51, pie52))
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 one_chart('5-waffle', list(waffle51, waffle52))
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
 # 6. Does color affect the reader's ability to estimate size?
 
-```{r}
+
+```r
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
 number <- c(9, 16, 20, 24, 18, 13)
 
@@ -492,8 +558,20 @@ waffle63 <- waffle(six3_waffle,
        )
 ```
 
-```{r}
+
+```r
 one_chart('6-pie', list(pie61, pie62, pie63))
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 one_chart('6-waffle', list(waffle61, waffle62, waffle63))
+```
+
+```
+## Saving 7 x 5 in image
 ```
 
