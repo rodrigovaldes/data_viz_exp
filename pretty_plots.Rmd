@@ -1,0 +1,497 @@
+---
+title: "Pretty Plots"
+author: "Beau Harrison"
+date: "May 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(waffle)
+library(cowplot)
+```
+
+```{r}
+one_chart <- function(fileName, listOfPlots) {
+  file <- paste(fileName, '.png', sep = '')
+  path <- file.path(getwd(), 'prettyPlots', file)
+  plot_grid(plotlist = listOfPlots)
+  ggsave(path)
+}
+```
+
+```{r}
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+```
+
+```{r}
+pie_function <- function(number, order, color_baseline, flavor) {
+  df <- data.frame(flavor, number)
+  df$flavor <- factor(df$flavor, flavor[order])
+  color_array <- color_baseline[order]
+  
+  ggplot(df, aes(x="", y=number, fill = flavor)) + 
+    geom_bar(width = 1, stat = "identity") +
+    coord_polar("y", start=0)+
+    blank_theme + theme(axis.text.x=element_blank()) + 
+    scale_fill_manual(values= color_array)
+}
+```
+
+# 1. Does the perception of the size of one slice depend on the size of the other slices?
+
+```{r}
+flavor <- c('vanilla', 'chocolate', 'strawberry', 'lemon', 'orange')
+order = c(1,2,3,4,5)
+color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
+
+pie11 <- pie_function(c(14, 17, 21, 23, 25), order, color_baseline, flavor)
+
+waffle11 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 17,
+          `Strawberry` = 21,
+          `Lemon` = 23,
+          `Orange` = 25),
+          rows = 10,
+          colors = color_baseline)
+
+pie12 <- pie_function(c(14, 33, 12, 14, 27), order, color_baseline, flavor)
+
+waffle12 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 33,
+          `Strawberry` = 12,
+          `Lemon` = 14,
+          `Orange` = 27),
+          rows = 10,
+          colors = color_baseline)
+
+pie13 <- pie_function(c(14, 13, 12, 20, 41), order, color_baseline, flavor)
+
+waffle13 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 13,
+          `Strawberry` = 12,
+          `Lemon` = 20,
+          `Orange` = 41),
+          rows = 10,
+          colors = color_baseline)
+
+pie14 <- pie_function(c(14, 30, 12, 30, 14), order, color_baseline, flavor)
+
+waffle14 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 30,
+          `Strawberry` = 12,
+          `Lemon` = 30,
+          `Orange` = 14),
+          rows = 10,
+          colors = color_baseline)
+```
+
+```{r}
+one_chart('1-pie', list(pie11, pie12, pie13, pie14))
+one_chart('1-waffle', list(waffle11, waffle12, waffle13, waffle14))
+```
+
+# 2. Does the total number of observations affect the reader's ability to estimate sizes?
+
+```{r}
+number <- c(14, 17, 21, 23, 25)
+df <- data.frame(flavor, number)
+df$flavor <- factor(df$flavor, flavor[order])
+color_array <- color_baseline[order]
+  
+pie21 <- ggplot(df, aes(x="", y=number, fill = flavor)) + 
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0)+
+  blank_theme + theme(axis.text.x=element_blank()) + 
+  scale_fill_manual(values= color_array) +
+  ggtitle("Number of Respondents : 1000")
+
+waffle21 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 17,
+          `Strawberry` = 21,
+          `Lemon` = 23,
+          `Orange` = 25),
+          rows = 10,
+          colors = color_baseline,
+          title = "Number of Respondents: 1000")
+  
+pie22 <- ggplot(df, aes(x="", y=number, fill = flavor)) + 
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0)+
+  blank_theme + theme(axis.text.x=element_blank()) + 
+  scale_fill_manual(values= color_array) +
+  ggtitle("Number of Respondents : 874")
+
+waffle22 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 17,
+          `Strawberry` = 21,
+          `Lemon` = 23,
+          `Orange` = 25),
+          rows = 10,
+          colors = color_baseline,
+          title = "Number of Respondents: 874")
+```
+
+```{r}
+one_chart('2-pie', list(pie21, pie22))
+one_chart('2-waffle', list(waffle21, waffle22))
+```
+
+# 3. Does the position affect the reader's ability to estimate size?
+
+```{r}
+order_1 = c(1,2,3,4,5)
+order_4 = c(1,4,2,3,5)
+
+three_df <- data.frame(flavor, number)
+
+three1_waffle <- c(`Vanilla` = 14,
+                 `Chocolate` = 17,
+                 `Strawberry` = 21,
+                 `Lemon` = 23,
+                 `Orange` = 25)
+
+three4_waffle <- c(`Vanilla` =14,
+                 `Lemon` =23,
+                 `Chocolate` =17,
+                 `Strawberry` = 21,
+                 `Orange` =25)
+
+pie31 <- pie_function(three_df, order_1, color_baseline, flavor)
+
+waffle31 <- waffle(three1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+      )
+
+pie34 <- pie_function(three_df, order_4, color_baseline, flavor)
+
+waffle34 <- waffle(three4_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "yellow2",
+         "chocolate4",
+         "brown2",
+         "darkorange2"))
+```
+
+```{r}
+one_chart('3-pie', list(pie31, pie34))
+one_chart('3-waffle', list(waffle31, waffle34))
+```
+
+# 4. Does the order affect the reader's ability to estimate size?
+
+```{r}
+flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'orange')
+number <- c(13, 16, 17, 25, 29)
+
+order_1 = c(1,2,3,4,5)
+order_2 = c(1,2,3,5,4)
+order_3 = c(2,1,3,4,5)
+order_4 = c(5,4,3,2,1)
+order_5 = c(4,5,3,2,1)
+order_6 = c(5,4,3,1,2)
+
+four_df <- data.frame(flavor, number)
+
+four1_waffle <- c(`Vanilla` = 13,
+                 `Chocolate` = 16,
+                 `Strawberry` = 17,
+                 `Lemon` = 25,
+                 `Orange` = 29)
+
+four2_waffle <- c(`Vanilla` = 13,
+                 `Chocolate` = 16,
+                 `Strawberry` = 17,
+                 `Orange` = 29,
+                 `Lemon` = 25)
+
+four3_waffle <- c(`Chocolate` = 16,
+                  `Vanilla` = 13,
+                 `Strawberry` = 17,
+                 `Lemon` = 25,
+                 `Orange` = 29)
+
+four4_waffle <- c(`Orange` = 29,
+                  `Lemon` = 25,
+                  `Strawberry` = 17,
+                  `Chocolate` = 16,
+                  `Vanilla` = 13)
+
+four5_waffle <- c(`Lemon` = 25,
+                  `Orange` = 29,
+                  `Strawberry` = 17,
+                  `Chocolate` = 16,
+                  `Vanilla` = 13)
+
+four6_waffle <- c(`Orange` = 29,
+                  `Lemon` = 25,
+                  `Strawberry` = 17,
+                  `Vanilla` = 13,
+                  `Chocolate` = 16)
+```
+
+```{r}
+pie41 <- pie_function(four_df, order_1, color_baseline, flavor)
+
+waffle41 <- waffle(four1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+       )
+
+pie42 <- pie_function(four_df, order_2, color_baseline, flavor)
+
+waffle42 <- waffle(four2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "chocolate4",
+         "brown2",
+         "darkorange2",
+         "yellow2"
+        )
+       )
+
+pie43 <- pie_function(four_df, order_3, color_baseline, flavor)
+
+waffle43 <- waffle(four3_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "chocolate4",
+         "lightgoldenrodyellow",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+       ) 
+pie44 <- pie_function(four_df, order_4, color_baseline, flavor)
+
+waffle44 <- waffle(four4_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "orange2",
+         "yellow2",
+         "brown2",
+         "chocolate4",
+         "lightgoldenrodyellow"
+        )
+       )
+
+pie45 <- pie_function(four_df, order_5, color_baseline, flavor)
+
+waffle45 <- waffle(four5_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "yellow2",
+         "orange2",
+         "brown2",
+         "chocolate4",
+         "lightgoldenrodyellow"
+        )
+       )
+
+pie46 <- pie_function(four_df, order_6, color_baseline, flavor)
+
+waffle46 <- waffle(four6_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "orange2",
+         "yellow2",
+         "brown2",
+         "lightgoldenrodyellow",
+         "chocolate4"
+        )
+       )
+```
+
+```{r}
+one_chart('4-pie', list(pie41, pie42, pie43, pie44, pie45, pie46))
+one_chart('4-waffle', list(waffle41, waffle42, waffle43, waffle44, waffle45, waffle46))
+```
+
+# 5. Does the distance between areas affect the reader's ability to sum them?
+
+```{r}
+order_1 = c(1,2,3,4,5,6)
+order_2 = c(1,3,2,4,5,6)
+order_3 = c(1,3,4,2,5,6)
+order_4 = c(1,3,4,5,2,6)
+order_5 = c(1,3,4,5,6,2)
+
+color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2", "navy")
+```
+
+```{r}
+flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
+number <- c(9, 16, 20, 24, 18, 13)
+five_df <- data.frame(flavor, number)
+
+pie51 <- pie_function(five_df, order_1, color_baseline, flavor)
+pie52 <- pie_function(five_df, order_2, color_baseline, flavor)
+
+five1_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` = 20,
+                 `Lemon` =24,
+                 `Peach` =18,
+                 `Blueberry` =13)
+
+five2_waffle <- c(`Vanilla` =9,
+                 `Strawberry` = 20,
+                 `Chocolate` =16,
+                 `Lemon` =24,
+                 `Peach` =18,
+                 `Blueberry` =13)
+
+waffle51 <- waffle(five1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2",
+         "navy"
+         ))
+
+waffle52 <- waffle(five2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "brown2",
+         "chocolate4",
+         "yellow2",
+         "darkorange2",
+         "navy"
+        )
+       )
+```
+
+```{r}
+one_chart('5-pie', list(pie51, pie52))
+one_chart('5-waffle', list(waffle51, waffle52))
+```
+
+# 6. Does color affect the reader's ability to estimate size?
+
+```{r}
+flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
+number <- c(9, 16, 20, 24, 18, 13)
+
+six_df <- data.frame(flavor, number)
+color_baseline_six = c("paleturquoise1", "chocolate4", "brown2", "yellow2", "darkorange2", "navy")
+
+pie61 <- pie_function(six_df, order_1, color_baseline_six, flavor)
+
+six1_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` =20,
+                 `Lemon` =24,
+                 `Peach` = 18,
+                 `Blueberry` =13)
+                 
+
+waffle61 <- waffle(six1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "paleturquoise1",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2",
+         "navy"
+        )
+       )
+
+## 6.2 Only the color of question is right
+
+color_baseline_six_3 = c("lightgoldenrodyellow", "navy", "chocolate4", "brown2", "yellow2", "darkorange2")
+
+pie62 <- pie_function(six_df, order_1, color_baseline_six_3, flavor)
+
+six2_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =13,
+                 `Strawberry` = 18,
+                 `Lemon` =24,
+                 `Peach` =20,
+                 `Blueberry` =16)
+
+waffle62 <- waffle(six2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "navy",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+       )
+
+## 6.3 All colors are wrong
+
+color_baseline_six_2 = c("chocolate4", "lightgoldenrodyellow", "navy", "brown2", "yellow2", "darkorange2")
+
+pie63 <- pie_function(six_df, order_1, color_baseline_six_2, flavor)
+
+six3_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` =20,
+                 `Lemon` =24,
+                 `Peach` = 18,
+                 `Blueberry` =13)
+
+waffle63 <- waffle(six3_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "chocolate4",
+         "lightgoldenrodyellow",
+         "navy",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+       )
+```
+
+```{r}
+one_chart('6-pie', list(pie61, pie62, pie63))
+one_chart('6-waffle', list(waffle61, waffle62, waffle63))
+```
+
