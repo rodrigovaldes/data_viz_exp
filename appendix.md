@@ -1,0 +1,408 @@
+---
+title: "Appendix"
+author: "Rafael Cruz Gil, Sushmita Gopalan, Beau Harrison, Rodrigo Valdés"
+date: "4 May 2018"
+output:
+  html_document:
+    keep_md: true
+---
+
+
+
+
+```r
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+```
+
+
+```r
+pie_function <- function(number, order, color_baseline, flavor) {
+  df <- data.frame(flavor, number)
+  df$flavor <- factor(df$flavor, flavor[order])
+  color_array <- color_baseline[order]
+  
+  ggplot(df, aes(x="", y=number, fill = flavor)) + 
+    geom_bar(width = 1, stat = "identity") +
+    coord_polar("y", start=0)+
+    blank_theme + theme(axis.text.x=element_blank()) + 
+    scale_fill_manual(values= color_array)
+}
+```
+
+## Experiment 1
+
+**Does the perception of the size of a slice -area- depends on the size of the other slices -areas-?**
+
+
+```r
+flavor <- c('vanilla', 'chocolate', 'strawberry', 'lemon', 'orange')
+order = c(1,2,3,4,5)
+color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
+
+pie11 <- pie_function(c(14, 17, 21, 23, 25), order, color_baseline, flavor)
+
+waffle11 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 17,
+          `Strawberry` = 21,
+          `Lemon` = 23,
+          `Orange` = 25),
+          rows = 10,
+          colors = color_baseline)
+
+pie12 <- pie_function(c(14, 33, 12, 14, 27), order, color_baseline, flavor)
+
+waffle12 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 33,
+          `Strawberry` = 12,
+          `Lemon` = 14,
+          `Orange` = 27),
+          rows = 10,
+          colors = color_baseline)
+
+pie13 <- pie_function(c(14, 13, 12, 20, 41), order, color_baseline, flavor)
+
+waffle13 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 13,
+          `Strawberry` = 12,
+          `Lemon` = 20,
+          `Orange` = 41),
+          rows = 10,
+          colors = color_baseline)
+
+pie14 <- pie_function(c(14, 30, 12, 30, 14), order, color_baseline, flavor)
+
+waffle14 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 30,
+          `Strawberry` = 12,
+          `Lemon` = 30,
+          `Orange` = 14),
+          rows = 10,
+          colors = color_baseline)
+```
+
+
+```r
+plot_grid(plotlist = list(pie11, pie12, pie13, pie14))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+```r
+plot_grid(plotlist = list(waffle11, waffle12, waffle13, waffle14))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-4-2.png)<!-- -->
+
+## Experiment 2
+
+
+**Does the total number of observations affect the reader's ability to estimate the size of a slice –area–?**
+
+
+```r
+number <- c(14, 17, 21, 23, 25)
+df <- data.frame(flavor, number)
+df$flavor <- factor(df$flavor, flavor[order])
+color_array <- color_baseline[order]
+  
+pie21 <- ggplot(df, aes(x="", y=number, fill = flavor)) + 
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0)+
+  blank_theme + theme(axis.text.x=element_blank()) + 
+  scale_fill_manual(values= color_array) +
+  ggtitle("Number of Respondents : 1000")
+
+waffle21 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 17,
+          `Strawberry` = 21,
+          `Lemon` = 23,
+          `Orange` = 25),
+          rows = 10,
+          colors = color_baseline,
+          title = "Number of Respondents: 1000")
+  
+pie22 <- ggplot(df, aes(x="", y=number, fill = flavor)) + 
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0)+
+  blank_theme + theme(axis.text.x=element_blank()) + 
+  scale_fill_manual(values= color_array) +
+  ggtitle("Number of Respondents : 874")
+
+waffle22 <- waffle(c(`Vanilla` = 14,
+          `Chocolate` = 17,
+          `Strawberry` = 21,
+          `Lemon` = 23,
+          `Orange` = 25),
+          rows = 10,
+          colors = color_baseline,
+          title = "Number of Respondents: 874")
+```
+
+
+```r
+plot_grid(plotlist = list(pie21, pie22))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+```r
+plot_grid(plotlist = list(waffle21, waffle22))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-6-2.png)<!-- -->
+
+## Experiment 3
+
+**Does the position of the slice –area– affect the perception of its size?**
+
+Specifically: **Is the size of the orange slice bigger than the lemon slice?**
+
+
+```r
+order_1 = c(1,2,3,4,5)
+order_4 = c(1,4,2,3,5)
+
+three_df <- data.frame(flavor, number)
+
+three1_waffle <- c(`Vanilla` = 14,
+                 `Chocolate` = 17,
+                 `Strawberry` = 21,
+                 `Lemon` = 23,
+                 `Orange` = 25)
+
+three4_waffle <- c(`Vanilla` =14,
+                 `Lemon` =23,
+                 `Chocolate` =17,
+                 `Strawberry` = 21,
+                 `Orange` =25)
+
+pie31 <- pie_function(three_df, order_1, color_baseline, flavor)
+
+waffle31 <- waffle(three1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+      )
+
+pie34 <- pie_function(three_df, order_4, color_baseline, flavor)
+
+waffle34 <- waffle(three4_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "yellow2",
+         "chocolate4",
+         "brown2",
+         "darkorange2"))
+```
+
+
+```r
+plot_grid(plotlist = list(pie31, pie34))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+
+```r
+plot_grid(plotlist = list(waffle31, waffle34))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-8-2.png)<!-- -->
+
+## Experiment 4 
+
+**Does the distance between slices affect the ability to sum?**
+
+Specifically: **What proportion of customers prefer chocolate and vanilla?**
+
+
+```r
+order_1 = c(1,2,3,4,5,6)
+order_2 = c(1,3,2,4,5,6)
+order_3 = c(1,3,4,2,5,6)
+order_4 = c(1,3,4,5,2,6)
+order_5 = c(1,3,4,5,6,2)
+
+color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2", "navy")
+```
+
+
+```r
+flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
+number <- c(9, 16, 20, 24, 18, 13)
+five_df <- data.frame(flavor, number)
+
+pie51 <- pie_function(five_df, order_1, color_baseline, flavor)
+pie52 <- pie_function(five_df, order_2, color_baseline, flavor)
+
+five1_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` = 20,
+                 `Lemon` =24,
+                 `Peach` =18,
+                 `Blueberry` =13)
+
+five2_waffle <- c(`Vanilla` =9,
+                 `Strawberry` = 20,
+                 `Chocolate` =16,
+                 `Lemon` =24,
+                 `Peach` =18,
+                 `Blueberry` =13)
+
+waffle51 <- waffle(five1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2",
+         "navy"
+         ))
+
+waffle52 <- waffle(five2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "brown2",
+         "chocolate4",
+         "yellow2",
+         "darkorange2",
+         "navy"
+        )
+       )
+```
+
+
+```r
+plot_grid(plotlist = list(pie51, pie52))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+
+```r
+plot_grid(plotlist = list(waffle51, waffle52))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-11-2.png)<!-- -->
+
+## Experiment 5
+
+**Does the correctness of labeling of the charts affect perception of the proportions in them?**
+
+Specificially: **What proportion of the respondents prefer vanilla ice cream?**
+
+
+```r
+flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
+number <- c(9, 16, 20, 24, 18, 13)
+
+six_df <- data.frame(flavor, number)
+color_baseline_six = c("paleturquoise1", "chocolate4", "brown2", "yellow2", "darkorange2", "navy")
+
+pie61 <- pie_function(six_df, order_1, color_baseline_six, flavor)
+
+six1_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` =20,
+                 `Lemon` =24,
+                 `Peach` = 18,
+                 `Blueberry` =13)
+                 
+
+waffle61 <- waffle(six1_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "paleturquoise1",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2",
+         "navy"
+        )
+       )
+
+## 6.2 Only the color of question is right
+
+color_baseline_six_3 = c("lightgoldenrodyellow", "navy", "chocolate4", "brown2", "yellow2", "darkorange2")
+
+pie62 <- pie_function(six_df, order_1, color_baseline_six_3, flavor)
+
+six2_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =13,
+                 `Strawberry` = 18,
+                 `Lemon` =24,
+                 `Peach` =20,
+                 `Blueberry` =16)
+
+waffle62 <- waffle(six2_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "lightgoldenrodyellow",
+         "navy",
+         "chocolate4",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+       )
+
+## 6.3 All colors are wrong
+
+color_baseline_six_2 = c("chocolate4", "lightgoldenrodyellow", "navy", "brown2", "yellow2", "darkorange2")
+
+pie63 <- pie_function(six_df, order_1, color_baseline_six_2, flavor)
+
+six3_waffle <- c(`Vanilla` =9,
+                 `Chocolate` =16,
+                 `Strawberry` =20,
+                 `Lemon` =24,
+                 `Peach` = 18,
+                 `Blueberry` =13)
+
+waffle63 <- waffle(six3_waffle,
+       rows = 10,
+       xlab = "One square = One percent",
+       colors = c(
+         "chocolate4",
+         "lightgoldenrodyellow",
+         "navy",
+         "brown2",
+         "yellow2",
+         "darkorange2"
+        )
+       )
+```
+
+
+```r
+plot_grid(plotlist = list(pie61, pie62, pie63))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+
+```r
+plot_grid(plotlist = list(waffle61, waffle62, waffle63))
+```
+
+![](appendix_files/figure-html/unnamed-chunk-13-2.png)<!-- -->
+

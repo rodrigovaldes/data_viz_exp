@@ -8,10 +8,7 @@ output:
      toc: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-```
+
 
 ### Introduction
 
@@ -40,17 +37,20 @@ To asses the difference between two vectors of results, we used four main tools.
 
 We fixed the size of one slice -area– (vanilla), and changed the size of all the other slices –areas– in different ways. Intuitively, the best chart should represent the same data no matter if the size of the other slices –areas– changed. We tested four different combinations for the sizes of other slices –areas–. Pie 1 uses the same data as waffle 1, an so on.
 
+
 *Option 1*
 
-Concept  |   Stat
-:--|--
-Sample Size Pie  | 40  
-Sample Size Waffle  | 45
-ttest  | -0.36 (p=0.72)
-cohen's d  | -0.079
-Pie Exact Accuracy  | 0.5
-Waffle Exact Accuracy | 0.47
- | |
+Sample Size Pie: 40
+
+Sample Size Waffle: 45
+
+ttest_ind:            t = -0.36  p = 0.72
+
+cohen's d:  -0.079
+
+Pie Exact Accuracy:  0.05
+
+Waffle Exact Accuracy:  0.47
 
 ![](images/two.png)
 
