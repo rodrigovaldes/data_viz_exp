@@ -485,4 +485,6 @@ One of the limitations of this study is that even when we found that in experime
 
 Thus, waffle charts, emerge as clear winners on the attribute of functionality. As for beauty, it might be argued that people prefer pie charts, but this might simply be simply because they are used to them. However, there is no reason for which waffle charts should not become a more widespread visualization tool since they offer significant advantages.
 
+## Appendix
 
+For the vizualisations and survey construction see [the appendix](appendix.Rmd).
