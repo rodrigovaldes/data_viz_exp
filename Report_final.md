@@ -37,16 +37,6 @@ To asses the difference between two vectors of results, we used four main tools.
 
 We fixed the size of one slice -area– (vanilla), and changed the size of all the other slices –areas– in different ways. Intuitively, the best chart should represent the same data no matter if the size of the other slices –areas– changed. We tested four different combinations for the sizes of other slices –areas–. Pie 1 uses the same data as waffle 1, an so on.
 
- | Option 1 | Option 2 | Option 3 | Option 4|
- ---|---|---|---|---|
- 
-Sample Size (Pies) | 40 |||
-Sample Size (Waffles) | 45 |||
-T Test p-value | 0.72|||
-T Test t-statistic | -0.36|||
-Cohen's d | -0.079|||
-Exact Accuracy (Pie) |0.05|||
-Exact Accuracy (Waffle) | 0.47|||
 
 *Option 1*
 
