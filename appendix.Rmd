@@ -7,14 +7,14 @@ output:
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(waffle)
 library(cowplot)
 ```
 
-```{r}
+```{r, echo=FALSE}
 blank_theme <- theme_minimal()+
   theme(
   axis.title.x = element_blank(),
@@ -26,7 +26,7 @@ blank_theme <- theme_minimal()+
   )
 ```
 
-```{r}
+```{r, echo=FALSE}
 pie_function <- function(number, order, color_baseline, flavor) {
   df <- data.frame(flavor, number)
   df$flavor <- factor(df$flavor, flavor[order])
@@ -44,7 +44,7 @@ pie_function <- function(number, order, color_baseline, flavor) {
 
 **Does the perception of the size of a slice -area- depends on the size of the other slices -areas-?**
 
-```{r}
+```{r, echo=FALSE}
 flavor <- c('vanilla', 'chocolate', 'strawberry', 'lemon', 'orange')
 order = c(1,2,3,4,5)
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2")
@@ -90,7 +90,7 @@ waffle14 <- waffle(c(`Vanilla` = 14,
           colors = color_baseline)
 ```
 
-```{r}
+```{r, echo=FALSE}
 plot_grid(plotlist = list(pie11, pie12, pie13, pie14))
 plot_grid(plotlist = list(waffle11, waffle12, waffle13, waffle14))
 ```
@@ -100,7 +100,7 @@ plot_grid(plotlist = list(waffle11, waffle12, waffle13, waffle14))
 
 **Does the total number of observations affect the reader's ability to estimate the size of a slice –area–?**
 
-```{r}
+```{r, echo=FALSE}
 number <- c(14, 17, 21, 23, 25)
 df <- data.frame(flavor, number)
 df$flavor <- factor(df$flavor, flavor[order])
@@ -139,7 +139,7 @@ waffle22 <- waffle(c(`Vanilla` = 14,
           title = "Number of Respondents: 874")
 ```
 
-```{r}
+```{r, echo=FALSE}
 plot_grid(plotlist = list(pie21, pie22))
 plot_grid(plotlist = list(waffle21, waffle22))
 ```
@@ -150,7 +150,7 @@ plot_grid(plotlist = list(waffle21, waffle22))
 
 Specifically: **Is the size of the orange slice bigger than the lemon slice?**
 
-```{r}
+```{r, echo=FALSE}
 order_1 = c(1,2,3,4,5)
 order_4 = c(1,4,2,3,5)
 
@@ -195,7 +195,7 @@ waffle34 <- waffle(three4_waffle,
          "darkorange2"))
 ```
 
-```{r}
+```{r, echo=FALSE}
 plot_grid(plotlist = list(pie31, pie34))
 plot_grid(plotlist = list(waffle31, waffle34))
 ```
@@ -206,7 +206,7 @@ plot_grid(plotlist = list(waffle31, waffle34))
 
 Specifically: **What proportion of customers prefer chocolate and vanilla?**
 
-```{r}
+```{r, echo=FALSE}
 order_1 = c(1,2,3,4,5,6)
 order_2 = c(1,3,2,4,5,6)
 order_3 = c(1,3,4,2,5,6)
@@ -216,7 +216,7 @@ order_5 = c(1,3,4,5,6,2)
 color_baseline = c("lightgoldenrodyellow", "chocolate4", "brown2", "yellow2", "darkorange2", "navy")
 ```
 
-```{r}
+```{r, echo=FALSE}
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
 number <- c(9, 16, 20, 24, 18, 13)
 five_df <- data.frame(flavor, number)
@@ -264,7 +264,7 @@ waffle52 <- waffle(five2_waffle,
        )
 ```
 
-```{r}
+```{r, echo=FALSE}
 plot_grid(plotlist = list(pie51, pie52))
 plot_grid(plotlist = list(waffle51, waffle52))
 ```
@@ -275,7 +275,7 @@ plot_grid(plotlist = list(waffle51, waffle52))
 
 Specificially: **What proportion of the respondents prefer vanilla ice cream?**
 
-```{r}
+```{r, echo=FALSE}
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
 number <- c(9, 16, 20, 24, 18, 13)
 
@@ -358,7 +358,7 @@ waffle63 <- waffle(six3_waffle,
        )
 ```
 
-```{r}
+```{r, echo=FALSE}
 plot_grid(plotlist = list(pie61, pie62, pie63))
 plot_grid(plotlist = list(waffle61, waffle62, waffle63))
 ```
