@@ -46,8 +46,8 @@ Concept  |   Stat
 :--|--
 Sample Size Pie  | 40  
 Sample Size Waffle  | 45
-ttest  | -0.36 (p=0.72)
-cohen's d  | -0.079
+T test indicators  | -0.36 (p=0.72)
+Cohen's d  | -0.079
 Pie Exact Accuracy  | 0.5
 Waffle Exact Accuracy | 0.47
 Pie Accuracy within 2 units | 0.43
@@ -67,8 +67,8 @@ Concept  |   Stat
 :--|--
 Sample Size Pie  | 48
 Sample Size Waffle  | 36
-ttest  | 1.26 (p=0.21)
-cohen's d  | 0.28
+T test indicators  | 1.26 (p=0.21)
+Cohen's d  | 0.28
 Pie Exact Accuracy  | 0.06
 Waffle Exact Accuracy | 0.72
 Pie Accuracy within 2 units | 0.33
@@ -85,8 +85,8 @@ Concept  |   Stat
 :--|--
 Sample Size Pie | 32
 Sample Size Waffle | 40
-ttest | 0.76 (p = 0.45)
-cohen's d | 0.18
+T test indicators | 0.76 (p = 0.45)
+Cohen's d | 0.18
 Pie Exact Accuracy | 0.06
 Waffle Exact Accuracy | 0.55
 Pie Accuracy within 2 units | 0.41
@@ -102,8 +102,8 @@ Concept  |   Stat
 :--|--
 Sample Size Pie | 45
 Sample Size Waffle | 50
-ttest | 0.22  (p = 0.83)
-cohen's d | 0.045
+T test indicators | 0.22  (p = 0.83)
+Cohen's d | 0.045
 Pie Exact Accuracy | 0.07
 Waffle Exact Accuracy | 0.62
 Pie Accuracy within 2 units | 0.47
@@ -137,8 +137,8 @@ Concept  |   Stat
 :--|--
 Sample Size Pie | 72
 Sample Size Waffle | 69
-ttest | 1.62  (p = 0.11)
-cohen's d | 0.27
+T test indicators | 1.62  (p = 0.11)
+Cohen's d | 0.27
 Pie Exact Accuracy | 0.014
 Waffle Exact Accuracy | 0.0
 Pie Accuracy within 2 units | 0.11
@@ -158,8 +158,8 @@ Concept  |   Stat
 :--|--
 Sample Size Pie | 68
 Sample Size Waffle | 60
-ttest | -0.08  (p = 0.945)
-cohen's d | -0.01
+T test indicators | -0.08  (p = 0.945)
+Cohen's d | -0.01
 Pie Exact Accuracy | 0.01
 Waffle Exact Accuracy | 0.18
 Pie Accuracy within 2 units | 0.06
@@ -198,8 +198,8 @@ Concept  |   Stat
 :--|--
 Sample Size Pie | 93
 Sample Size Waffle | 110
-ttest | 2.01  (p = 0.046)
-cohen's d | 0.29
+T test indicators | 2.01  (p = 0.046)
+Cohen's d | 0.29
 Pie Exact Accuracy | 0.77
 Waffle Exact Accuracy | 0.88
  | | 
@@ -245,21 +245,17 @@ The question was: **what proportion of customers prefer chocolate and vanilla?**
 *Option 1: Sum adjacent slices -areas- when the size of the areas are similar*
 
 
-Sample Size Pie: 65
-
-Sample Size Waffle: 72
-
-ttest_ind:            t = 1.64  p = 0.1
-
-cohen's d:  0.2813
-
-Pie Exact Accuracy:  0.28
-
-Waffle Exact Accuracy:  0.51
-
-Pie Accuracy within 2 units:  0.38
-
-Waffle Accuracy within 2 units:  0.57
+Concept | Stat
+:--|--
+Sample Size Pie | 65
+Sample Size Waffle | 72
+T test indicators |   1.64  (p = 0.1)
+Cohen's d |  0.2813
+Pie Exact Accuracy |  0.28
+Waffle Exact Accuracy |  0.51
+Pie Accuracy within 2 units |  0.38
+Waffle Accuracy within 2 units |  0.57
+||
 
 ![](images/fourteen.png)
 
@@ -267,21 +263,17 @@ Waffle Accuracy within 2 units:  0.57
 
 *Option 2: Sum non adjacent slices -areas- when the size of the slides -areas- are similar*
 
-Sample Size Pie: 113
-
-Sample Size Waffle: 108
-
-ttest_ind:            t = 1.02  p = 0.31
-
-cohen's d:  0.14
-
-Pie Exact Accuracy:  0.17
-
-Waffle Exact Accuracy:  0.43
-
-Pie Accuracy within 2 units:  0.26
-
-Waffle Accuracy within 2 units:  0.55
+Concept | Stat
+:--|--
+Sample Size Pie | 113
+Sample Size Waffle | 108
+T test indicators |    1.02  (p = 0.31)
+Cohen's d |  0.14
+Pie Exact Accuracy |  0.17
+Waffle Exact Accuracy |  0.43
+Pie Accuracy within 2 units |  0.26
+Waffle Accuracy within 2 units |  0.55
+||
 
 ![](images/fifthteen.png)
 
@@ -295,41 +287,34 @@ When we ask to sum non-adjacent slices, the difference between pies and waffles 
 
 *Option 3: compare two class of sums in pie graphs: adjacency sums and no-adjacency sums*
 
-Sample Size adjacent 65
-
-Sample Size opposite 113
-
-ttest_ind:            t = 0.18  p = 0.86
-
-cohen's d:  0.03
-
-Adjacent Exact Accuracy:  0.28
-
-Opposite Exact Accuracy:  0.17
-
-Adjacent Accuracy within 2 units:  0.38
-
-Opposite Accuracy within 2 units:  0.26
+Concept | Stat
+: --|--
+Sample Size adjacent | 65
+Sample Size opposite | 113
+T test indicators |  0.18  (p = 0.86)
+Cohen's d |  0.03
+Adjacent Exact Accuracy |  0.28
+Opposite Exact Accuracy |  0.17
+Adjacent Accuracy within 2 units |  0.38
+Opposite Accuracy within 2 units |  0.26
+||
 
 ******************************
 
 *Option 4: compare two class of sums in waffles: adjacency sums and no-adjacency sums*
 
-Sample Size adjacent 72
+Concept | Stat
+: --|--
 
-Sample Size opposite 108
-
-ttest_ind:            t = -0.82105  p = 0.412859
-
-cohen's d:  -0.12
-
-Adjacent Accuracy:  0.51
-
-Opposite Accuracy:  0.43
-
-Adjacent Accuracy within 2 units:  0.57
-
-Opposite Accuracy within 2 units:  0.55
+Sample Size adjacent | 72
+Sample Size opposite | 108
+T test indicators |      -0.82  (p = 0.41)
+Cohen's d |  -0.12
+Adjacent Accuracy |  0.51
+Opposite Accuracy |  0.43
+Adjacent Accuracy within 2 units |  0.57
+Opposite Accuracy within 2 units |  0.55
+||
 
 ******************************
 
@@ -339,21 +324,17 @@ For pies and waffles, there is no statistically significant difference between s
 
 *Option 5: Sum adjacent slices -areas- when the size of the slices -areas- are quite different*
 
-Sample Size Pie: 71
-
-Sample Size Waffle: 77
-
-ttest_ind:            t = 2.81  p = 0.005
-
-cohen's d:  0.46
-
-Pie Exact Accuracy:  0.07
-
-Waffle Exact Accuracy:  0.04
-
-Pie Accuracy within 2 units:  0.13
-
-Waffle Accuracy within 2 units:  0.04
+Concept | Stat
+:--|--
+Sample Size Pie | 71
+Sample Size Waffle | 77
+T test indicators |   2.81  (p = 0.005)
+Cohen's d |  0.46
+Pie Exact Accuracy |  0.07
+Waffle Exact Accuracy |  0.04
+Pie Accuracy within 2 units |  0.13
+Waffle Accuracy within 2 units |  0.04
+||
 
 ![](images/fourteen.png)
 
@@ -361,21 +342,17 @@ Waffle Accuracy within 2 units:  0.04
 
 *Option 6: Sum no-adjacent slices -areas- when the size of the slices -areas- are quite different*
 
-Sample Size Pie: 97
-
-Sample Size Waffle: 97
-
-ttest_ind:            t = -1.12  p = 0.27
-
-cohen's d:  -0.16
-
-Pie Exact Accuracy:  0.13
-
-Waffle Exact Accuracy:  0.0
-
-Pie Accuracy within 2 units:  0.25
-
-Waffle Accuracy within 2 units:  0.02
+Concept | Stat
+: --|--
+Sample Size Pie | 97
+Sample Size Waffle | 97
+T test indicators |   -1.12  (p = 0.27)
+Cohen's d |  -0.16
+Pie Exact Accuracy |  0.13
+Waffle Exact Accuracy |  0.0
+Pie Accuracy within 2 units |  0.25
+Waffle Accuracy within 2 units |  0.02
+||
 
 ![](images/fifthteen.png)
 
@@ -397,22 +374,17 @@ The question was: **what proportion of the respondents prefer vanilla ice cream?
 
 *Option 1: Pies vs Waffles. Only vanilla is mislabelled*
 
-Sample Size Pie: 52
-
-Sample Size Waffle: 56
-
-ttest_ind:            t = -0.88  p = 0.38
-
-cohen's d:  -0.17
-
-Pie Exact Accuracy:  0.08
-
-Waffle Exact Accuracy:  0.64
-
-
-Pie Accuracy within 2 units:  0.5
-
-Waffle Accuracy within 2 units:  0.73
+Concept | Stat
+:--|--
+Sample Size Pie | 52
+Sample Size Waffle | 56
+T test indicators |  -0.88  (p = 0.38)
+Cohen's d |  -0.17
+Pie Exact Accuracy |  0.08
+Waffle Exact Accuracy |  0.64
+Pie Accuracy within 2 units |  0.5
+Waffle Accuracy within 2 units |  0.73
+||
 
 
 ![](images/sixteen.png)
@@ -422,23 +394,17 @@ Waffle Accuracy within 2 units:  0.73
 
 *Option 2: Pies vs Waffles. Vanilla is right, the rest are wrong*
 
-
-Sample Size Pie: 48
-
-Sample Size Waffle: 48
-
-ttest_ind:            t = 0.9  p = 0.37
-
-cohen's d:  0.18
-
-Pie Exact Accuracy:  0.04
-
-Waffle Exact Accuracy:  0.62
-
-
-Pie Accuracy within 2 units:  0.39
-
-Waffle Accuracy within 2 units:  0.69
+Concept | Stat
+:--|--
+Sample Size Pie | 48
+Sample Size Waffle | 48
+T test indicators |   0.9  (p = 0.37)
+Cohen's d |  0.18
+Pie Exact Accuracy |  0.04
+Waffle Exact Accuracy |  0.62
+Pie Accuracy within 2 units |  0.39
+Waffle Accuracy within 2 units |  0.69
+||
 
 ![](images/seventeen.png)
 
@@ -447,21 +413,17 @@ Waffle Accuracy within 2 units:  0.69
 
 *Option 3: Pies vs Waffles. Everything is mislabelled*
 
-Sample Size Pie: 59
-
-Sample Size Waffle: 56
-
-ttest_ind:            t = 0.48  p = 0.63
-
-cohen's d:  0.09
-
-Pie Exact Accuracy:  0.02
-
-Waffle Exact Accuracy:  0.21
-
-Pie Accuracy within 2 units:  0.19
-
-Waffle Accuracy within 2 units:  0.23
+Concept | Stat
+:--|--
+Sample Size Pie | 59
+Sample Size Waffle | 56
+T test indicators |     0.48  (p = 0.63)
+Cohen's d |  0.09
+Pie Exact Accuracy |  0.02
+Waffle Exact Accuracy |  0.21
+Pie Accuracy within 2 units |  0.19
+Waffle Accuracy within 2 units |  0.23
+||
 
 ![](images/eighteen.png)
 
@@ -471,45 +433,39 @@ In any of the three former cases, no clear difference between pie charts and waf
 
 *Option 4: Pie 1 vs Pie 2. Only vanilla is mislabeled vs Everything is mislabeled but vanilla*
 
-ttest_ind:            t = -1.84 p = 0.07
-
-cohen's d:  -0.37
-
-p1 Exact Accuracy:  0.08
-
-p2 Exact Accuracy:  0.04
-
-p1 Accuracy within 2 units:  0.5
-
-p2 Accuracy within 2 units:  0.39
+Concept | Stat
+:--|--
+T test indicators |      -1.84 (p = 0.07)
+Cohen's d |  -0.37
+p1 Exact Accuracy |  0.08
+p2 Exact Accuracy | 0.04
+p1 Accuracy within 2 units |  0.5
+p2 Accuracy within 2 units |  0.39
+||
 
 *Option 5: Pie 2 vs Pie 3. Everything is mislabeled but vanilla vs Everything mislabelled*
 
-ttest_ind:            t = -0.42  p = 0.68
-
-cohen's d:  -0.08
-
-p3 Exact Accuracy:  0.02
-
-p2 Exact Accuracy:  0.04
-
-p3 Accuracy within 2 units:  0.19
-
-p2 Accuracy within 2 units:  0.39
+Concept | Stat
+:--|--
+T test indicators |   -0.42  (p = 0.68)
+Cohen's d |  -0.08
+p3 Exact Accuracy |  0.02
+p2 Exact Accuracy |  0.04
+p3 Accuracy within 2 units |  0.19
+p2 Accuracy within 2 units |  0.39
+||
 
 *Option 6: Pie 1 vs Pie 3. Only vanilla is mislabeled vs Everything mislabelled*
 
-ttest_ind:            t = 1.95  p = 0.05
-
-cohen's d:  0.37
-
-p3 Exact Accuracy:  0.02
-
-p1 Exact Accuracy:  0.08
-
-p3 Accuracy within 2 units:  0.19
-
-p1 Accuracy within 2 units:  0.5
+Concept | Stat
+:--|--
+T test indicators |  1.95  (p = 0.05)
+Cohen's d |  0.37
+p3 Exact Accuracy |  0.02
+p1 Exact Accuracy |  0.08
+p3 Accuracy within 2 units |  0.19
+p1 Accuracy within 2 units |  0.5
+||
 
 ******************************
 All in all, pie 1 is better than pie 2 and 3. However, the significance is low ~0.06. 
@@ -531,4 +487,5 @@ All in all, waffle charts allow for greater accuracy than pie charts. All throug
 One of the limitations of this study is that even when we found that in experiment 1, 2, and 3 waffles outperform pies, maybe waffles take more time to be interpreted. Then, maybe waffles are not the best option sometimes, but more research is needed to asses timing issues.
 
 Thus, waffle charts, emerge as clear winners on the attribute of functionality. As for beauty, it might be argued that people prefer pie charts, but this might simply be simply because they are used to them. However, there is no reason for which waffle charts should not become a more widespread visualization tool since they offer significant advantages.
+
 
