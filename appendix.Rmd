@@ -7,6 +7,8 @@ output:
     keep_md: true
 ---
 
+Below is an example of the questions on the survey. The first larger image was captured from the survey showing the exact Qualtrics configuration along with the slider for user input. Second, each of the variants that were chosen at random to be shown to a survey participant. To be clear a single respondent would have only seen one chart from each of the following categories.
+
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
@@ -43,6 +45,12 @@ pie_function <- function(number, order, color_baseline, flavor) {
 ## Experiment 1
 
 **Does the perception of the size of a slice -area- depends on the size of the other slices -areas-?**
+
+*Example questions*
+
+![Survey question of pie chart: What proportion of the respondents prefer vanilla ice cream?](appendix_files/1-1-question.png)
+
+![Survey question of waffle chart: What proportion of the respondents prefer vanilla ice cream?](appendix_files/1-2-question.png)
 
 ```{r, echo=FALSE}
 flavor <- c('vanilla', 'chocolate', 'strawberry', 'lemon', 'orange')
@@ -90,6 +98,8 @@ waffle14 <- waffle(c(`Vanilla` = 14,
           colors = color_baseline)
 ```
 
+*Variants of the question*
+
 ```{r, echo=FALSE}
 plot_grid(plotlist = list(pie11, pie12, pie13, pie14))
 plot_grid(plotlist = list(waffle11, waffle12, waffle13, waffle14))
@@ -99,6 +109,12 @@ plot_grid(plotlist = list(waffle11, waffle12, waffle13, waffle14))
 
 
 **Does the total number of observations affect the reader's ability to estimate the size of a slice –area–?**
+
+*Example questions*
+
+![Survey question of pie chart: What number of respondents prefer vanilla ice cream?](appendix_files/2-1-question.png)
+
+![Survey question of pie chart: What number of respondents prefer vanilla ice cream?](appendix_files/2-2-question.png)
 
 ```{r, echo=FALSE}
 number <- c(14, 17, 21, 23, 25)
@@ -139,6 +155,8 @@ waffle22 <- waffle(c(`Vanilla` = 14,
           title = "Number of Respondents: 874")
 ```
 
+*Variants of the question*
+
 ```{r, echo=FALSE}
 plot_grid(plotlist = list(pie21, pie22))
 plot_grid(plotlist = list(waffle21, waffle22))
@@ -149,6 +167,12 @@ plot_grid(plotlist = list(waffle21, waffle22))
 **Does the position of the slice –area– affect the perception of its size?**
 
 Specifically: **Is the size of the orange slice bigger than the lemon slice?**
+
+*Example questions*
+
+![Survey question of pie chart: Is the size of the orange slice bigger than the lemon slice?](appendix_files/3-1-question.png)
+
+![Survey question of pie chart: Is the size of the orange slice area bigger than the lemon slice?](appendix_files/3-2-question.png)
 
 ```{r, echo=FALSE}
 order_1 = c(1,2,3,4,5)
@@ -195,6 +219,8 @@ waffle34 <- waffle(three4_waffle,
          "darkorange2"))
 ```
 
+*Variants of the question*
+
 ```{r, echo=FALSE}
 plot_grid(plotlist = list(pie31, pie34))
 plot_grid(plotlist = list(waffle31, waffle34))
@@ -205,6 +231,12 @@ plot_grid(plotlist = list(waffle31, waffle34))
 **Does the distance between slices affect the ability to sum?**
 
 Specifically: **What proportion of customers prefer chocolate and vanilla?**
+
+*Example questions*
+
+![Survey question of pie chart: What proportion of customers prefer chocolate and vanilla?](appendix_files/4-1-question.png)
+
+![Survey question of pie chart: What proportion of customers prefer chocolate and vanilla?](appendix_files/4-2-question.png)
 
 ```{r, echo=FALSE}
 order_1 = c(1,2,3,4,5,6)
@@ -264,6 +296,8 @@ waffle52 <- waffle(five2_waffle,
        )
 ```
 
+*Variants of the question*
+
 ```{r, echo=FALSE}
 plot_grid(plotlist = list(pie51, pie52))
 plot_grid(plotlist = list(waffle51, waffle52))
@@ -273,7 +307,11 @@ plot_grid(plotlist = list(waffle51, waffle52))
 
 **Does the correctness of labeling of the charts affect perception of the proportions in them?**
 
-Specificially: **What proportion of the respondents prefer vanilla ice cream?**
+Specifically: **What proportion of the respondents prefer vanilla ice cream?**
+
+![Survey question of pie chart: What proportion of the respondents prefer vanilla ice cream?](appendix_files/5-1-question.png)
+
+![Survey question of pie chart: What proportion of the respondents prefer vanilla ice cream?](appendix_files/5-2-question.png)
 
 ```{r, echo=FALSE}
 flavor <- c('vanilla','chocolate','strawberry', 'lemon', 'peach', 'blueberry')
@@ -357,6 +395,8 @@ waffle63 <- waffle(six3_waffle,
         )
        )
 ```
+
+*Variants of the question*
 
 ```{r, echo=FALSE}
 plot_grid(plotlist = list(pie61, pie62, pie63))
