@@ -374,7 +374,7 @@ six3_waffle <- c(`Vanilla` =9,
 waffle(six3_waffle,
        rows = 10,
        xlab = "One square = One percent",
-       colors = c("lightgoldenrodyellow", "navy", "chocolate4", "brown2", "yellow2", "darkorange2"))
+       colors = c("chocolate4", "lightgoldenrodyellow", "navy", "brown2", "yellow2", "darkorange2"))
 ```
 
 ![](Five_Six_files/figure-markdown_github/unnamed-chunk-8-2.png)
